@@ -45,7 +45,7 @@ Create a user-friendly interactive database of text documents from the State of 
 ## Schedule:
 **Tuesday, May 1:** Final Exams
 
-##Survey of existing resources:
+## Survey of existing resources:
 
 -[”State of the union messages” at the American Presidency Project](http://www.presidency.ucsb.edu/sou.php)
 
