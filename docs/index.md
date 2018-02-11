@@ -1,7 +1,3 @@
-SOTU-db
-======
-A project for searching, analyzing, and visualizing "State of the Union" addresses.
-
 ## Objective Statement:
 Create a user-friendly interactive database of text documents from the State of the Union addresses through history. Allow users to search, compare documents, create visualizations, and perform computational tasks on the text.
 
