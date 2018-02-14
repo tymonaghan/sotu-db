@@ -1,6 +1,3 @@
----
-title:index
----
 ![Wilson](http://cdn.loc.gov/service/pnp/hec/13500/13599r.jpg)
 ## Objective:
 Create a user-friendly interactive database of text documents from the State of the Union addresses through history. Allow users to search, compare documents, create visualizations, and perform computational tasks on the text.
