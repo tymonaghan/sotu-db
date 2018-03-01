@@ -2,6 +2,9 @@
 ## Objective:
 Create a user-friendly interactive database of text documents from the State of the Union addresses through history. Allow users to search, compare documents, create visualizations, and perform computational tasks on the text.
 
+## Development Blog
+[Please visit the SOTU-db development blog here!](http://blog.sotu-db.com/)
+
 ## Project Goals:
 
 -create site with full searchable text for all tier-one and -two documents
