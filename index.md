@@ -1,4 +1,4 @@
-![Wilson](http://cdn.loc.gov/service/pnp/hec/13500/13599r.jpg)
+![Wilson-1950](https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Photograph_of_President_Truman_delivering_his_State_of_the_Union_address_to_a_joint_session_of_Congress._-_NARA_-_200188.jpg/593px-Photograph_of_President_Truman_delivering_his_State_of_the_Union_address_to_a_joint_session_of_Congress._-_NARA_-_200188.jpg)
 ## Objective:
 Create a user-friendly interactive database of text documents from the State of the Union addresses through history. Allow users to search, compare documents, create visualizations, and perform computational tasks on the text.
 
