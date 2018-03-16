@@ -7,7 +7,7 @@ Create a user-friendly interactive database of text documents from the State of 
 
 ## Product Goals:
 
-###Primary Goals - Minimum Viable Product
+### Primary Goals - Minimum Viable Product
 
 -create online repository of plain text files of each SOTU*
 
@@ -17,7 +17,7 @@ Create a user-friendly interactive database of text documents from the State of 
 
 -create clickable "cards" with search suggestions, provocative quotes, trivia, etc. to guide and encourage playful user engagement
 
-###Secondary Goals
+### Secondary Goals
 
 -create a TEI schema and encode one or more documents manually
 
@@ -27,7 +27,7 @@ Create a user-friendly interactive database of text documents from the State of 
 
 -game features, such as "match the President to the reading level" or "guess whose SOTUs were longer"
 
-###Stretch / future Goals
+### Stretch / future Goals
 
 -integrate a way of visualizing the audience reaction to the speeches as given (when possible), such as showing which states have reps who gave standing ovations at which times, etc. At least have a way to visualize the political makeup of Congress at the time of the speech. 
 
@@ -64,5 +64,5 @@ Create a user-friendly interactive database of text documents from the State of 
 
 -[Textual analysis of Obama’s Sixth Annual Address and visual supplements](http://www.digitalhumanities.org/dhq/vol/10/4/000280/000280.html)
 
-##Note:
+## Note:
 I use the term "SOTU" to describe any written or verbally delivered address included in the list at the [American Presidency Project.](http://www.presidency.ucsb.edu/sou.php)
