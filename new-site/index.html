@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <title>SOTU-db HTML prototype</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 
+i disabled these stylesheets that came with the template, so re-enable if any formatting seems broken:
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+-->
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+<body>
+
+	<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-purple w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h2 class="w3-padding-64"><b>SOTU-db</b></h2>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#sotus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">SOTUs</a> 
+    <a href="#presidents" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Presidents</a> 
+    <a href="#social" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Social</a> 
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About SOTU-db</a> 
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-purple w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-purple w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Company Name</span>
+</header>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+
+<!-- "start here" home block -->
+<div class="w3-main">
+    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card w3-hover-opacity-off">
+      <h2>Start here.</h2>
+      <label>Type any word, phrase, name or year to get started...</label>
+      <input class="w3-input w3-border" type="text" placeholder="Your Search Here...">
+      <button type="button" class="w3-button w3-red w3-margin-top">Explore</button>
+    </div>
+  </div>
+
+
+<div class="w3-container" id="sotus">
+  <h1 class="w3-xxxlarge w3-text-red"><b>SOTUs.</b></h1>
+  <hr style="width:50px;border:5px solid red" class="w3-round">
+  <p><i>He shall from time to time give to the Congress Information of the State of the Union, and recommend to their Consideration such Measures as he shall judge necessary and expedient... </i></p>
+  <p align="right">The US Constitution, Article 2, Section 3</p>
+  <p><b>Every annual presidential address to Congress</b>:</p>
+</div>
+
+  <!-- SOTUs carousel -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/George_Washington_by_Gilbert_Stuart_Yale_University_Art_Gallery_portrait.jpeg/487px-George_Washington_by_Gilbert_Stuart_Yale_University_Art_Gallery_portrait.jpeg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>1790-Washington</h3>
+          <p class="w3-opacity">George Washington</p>
+          <p class="w3-opacity">January 8, 1790</p>
+          <p>The OG-SOTU by America's OG POTUS.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Jimmy_Carter.jpg/324px-Jimmy_Carter.jpg" alt="Jimmy Carter" style="width:100%">
+        <div class="w3-container">
+          <h3>1980-Carter</h3>
+          <p class="w3-opacity">Jimmy Carter</p>
+          <p class="w3-opacity">January 21, 1980</p>
+          <p>Afghanistan features heavily in this Cold War Classic.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Lyndon_B._Johnson_televised_Press_Conference_November_17%2C_1967_-_LBJ_Museum_C7528-25_%28cropped%29.jpg/385px-Lyndon_B._Johnson_televised_Press_Conference_November_17%2C_1967_-_LBJ_Museum_C7528-25_%28cropped%29.jpg" alt="Lyndon Johnson" style="width:100%">
+        <div class="w3-container">
+          <h3>1965-Johnson</h3>
+          <p class="w3-opacity">Lyndon B. Johnson</p>
+          <p class="w3-opacity">January 4, 1965</p>
+          <p>Johnson finds his voice after over a year as POTUS.</p>
+        </div>
+      </div>
+    </div>
+  </div>
