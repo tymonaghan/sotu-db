@@ -28,35 +28,35 @@ Create a user-friendly interactive database of text documents from the State of 
 
 - create clickable "cards" with search suggestions, provocative quotes, trivia, etc. to guide and encourage playful user engagement
 
--use Processing to create visualizations with options to sort, color-code, and filter results
+- use Processing to create visualizations with options to sort, color-code, and filter results
 
--integrate analysis through R to enable users to perform textual analysis right in the web interface
+- integrate analysis through R to enable users to perform textual analysis right in the web interface
 
--game features, such as "match the President to the reading level" or "guess whose SOTUs were longer"
+- game features, such as "match the President to the reading level" or "guess whose SOTUs were longer"
 
 ### Stretch / future Goals / Could-haves
 
--integrate a way of visualizing the audience reaction to the speeches as given (when possible), such as showing which states have reps who gave standing ovations at which times, etc. At least have a way to visualize the political makeup of Congress at the time of the speech.
+- integrate a way of visualizing the audience reaction to the speeches as given (when possible), such as showing which states have reps who gave standing ovations at which times, etc. At least have a way to visualize the political makeup of Congress at the time of the speech.
 
--create a TEI schema and encode one or more documents manually
+- create a TEI schema and encode one or more documents manually
 
--integrate with Twitter to enable users to see the Twitter response to different parts of the address for recent SOTUs
+- integrate with Twitter to enable users to see the Twitter response to different parts of the address for recent SOTUs
 
--integrate primary source documents and drafts to create digital critical editions of certain SOTUs
+- integrate primary source documents and drafts to create digital critical editions of certain SOTUs
 
 ### Out of Scope:
 
--video or audio files of addresses
+- video or audio files of addresses
 
--public interaction like wikis, comments, etc
+- public interaction like wikis, comments, etc
 
 ## Team:
 
--**Tyler Monaghan:** Project lead, Processing visualizations
+- **Tyler Monaghan:** Project lead, Processing visualizations
 
--**Abdur Khan:** Project assistant, Python/R analysis
+- **Abdur Khan:** Project assistant, Python/R analysis
 
--**Tina Figueroa:** Project assistant, social media integration
+- **Tina Figueroa:** Project assistant, social media integration
 
 ## Schedule / Milestone Goals:
 
@@ -74,17 +74,17 @@ Create a user-friendly interactive database of text documents from the State of 
 
 ## Survey of existing resources:
 
--[”State of the union messages” at the American Presidency Project](http://www.presidency.ucsb.edu/sou.php)
+- [”State of the union messages” at the American Presidency Project](http://www.presidency.ucsb.edu/sou.php)
 
--[Historical state of the union addresses on archives.gov](https://www.archives.gov/legislative/features/sotu)
+- [Historical state of the union addresses on archives.gov](https://www.archives.gov/legislative/features/sotu)
 
--[An analysis from R about Trump’s 2018 SOTU address](http://blog.revolutionanalytics.com/2018/01/trump-sotu.html)
+- [An analysis from R about Trump’s 2018 SOTU address](http://blog.revolutionanalytics.com/2018/01/trump-sotu.html)
 
--[A similar project to SOTU-db but not a very pleasing interface](http://stateoftheunion.onetwothree.net/index.shtml)
+- [A similar project to SOTU-db but not a very pleasing interface](http://stateoftheunion.onetwothree.net/index.shtml)
 
--[Buzzfeed analysis of Trump's 2018 SOTU, with R code on Github](https://buzzfeednews.github.io/2018-01-trump-state-of-the-union/)
+- [Buzzfeed analysis of Trump's 2018 SOTU, with R code on Github](https://buzzfeednews.github.io/2018-01-trump-state-of-the-union/)
 
--[Textual analysis of Obama’s Sixth Annual Address and visual supplements](http://www.digitalhumanities.org/dhq/vol/10/4/000280/000280.html)
+- [Textual analysis of Obama’s Sixth Annual Address and visual supplements](http://www.digitalhumanities.org/dhq/vol/10/4/000280/000280.html)
 
 ### \*Note:
 
