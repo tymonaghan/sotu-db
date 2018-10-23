@@ -59,11 +59,11 @@ SOTUs2 = tm_map(SOTUs2, toSpace, "$")
 toDollars = content_transformer(function(x,pattern) {return (gsub(pattern, "dollars", x))})
 
 #use toDollars to change dollar signs to "dollars"
-SOTUs2 = tm_map(SOTUs2, toDollars, "$")
+SOTUs3 = tm_map(SOTUs2, toDollars, "$")
 #this shit isn't working either wtf
 
 #lets try one more:
-replaceDollars <- function(x) gsub("?","dollars",x)
+replaceDollars = function(x) gsub("?","dollars",x)
 
 #then:
 SOTUs3 = tm_map(SOTUs2, replaceDollars)
@@ -79,7 +79,7 @@ SOTUs3 = tm_map(SOTUs, removePunctuation)
 SOTUs4 = tm_map(SOTUs3,content_transformer(tolower))
 
 #inspect a particular document
-writeLines(as.character(SOTUs5[[20]]))
+writeLines(as.character(SOTUs3[[20]]))
 
 #Strip digits (std transformation, so no need for content_transformer)
 docs <- tm_map(docs, removeNumbers)
@@ -105,7 +105,7 @@ stemmedSOTUs = tm_map(SOTUs5,stemDocument)
 writeLines(as.character(stemmedSOTUs[[30]]))
 
 #fix errors
-stemmedSOTUs = tm_map(stemmedSOTUs, content_transformer(gsub), pattern = “[wordToReplace]”, replacement = “[replacementWord]”)
+stemmedSOTUs = tm_map(stemmedSOTUs, content_transformer(gsub), pattern = "[wordToReplace]", replacement = "[replacementWord]")
 
 #################################
 ## Create document-term matrix ##

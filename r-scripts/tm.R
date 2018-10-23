@@ -66,7 +66,7 @@ GetSentiment = function(file){
     
     #mutate(president = str_match(file, "(.*?)_")[2]) # add president
     #this is based on a file name structure of Adams_1797.txt so I should be able to figure out how to change it up...
-    mutate(president = str_match(file, "([[:alpha:]]{4,})")[2]) #uh nope
+    mutate(president = str_match(file, "(?<=-)[A-z]+(?=-)")) #this is just pulling text strings 4+ chars long right noiw, which i guess works...
   
     
     
@@ -75,9 +75,9 @@ GetSentiment = function(file){
 }
 
 # test: should return
-# negative	positive	sentiment	file	year	president
-# 117	240	123	Bush_1989.txt	1989	Bush
-GetSentiment(files[19]) 
+# negative	positive	sentiment	file	        year	president
+# 117	      240	      123	      Bush_1989.txt	1989	Bush
+GetSentiment(files[197]) 
 # i am still sort of perplexed about how it is numbering these but this worked for now
 
 #inspect a particular document
