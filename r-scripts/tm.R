@@ -6,10 +6,10 @@ library(glue)
 library(stringr)
 
 # get a list of the files in the input directory
-files <- list.files("~/git/sotu-db/speeches-gutenberg")
+files <- list.files("/home/manager/git/sotu-db/speeches-gutenberg")
 
 # stick together the path to the file & 1st file name
-fileName <- glue("~/git/sotu-db/speeches-gutenberg/", files[1], sep = "")
+fileName <- glue("/home/manager/git/sotu-db/speeches-gutenberg/", files[1], sep = "")
 
 # get rid of any sneaky trailing spaces
 fileName <- trimws(fileName)
@@ -40,7 +40,7 @@ tokens %>%
 # sentiment words, negative sentiment words, the difference & the normalized difference
 GetSentiment = function(file){
   # get the file
-  fileName <- glue("~/git/sotu-db/speeches-gutenberg/", file, sep = "")
+  fileName <- glue("/home/manager/git/sotu-db/speeches-gutenberg/", file, sep = "")
   # get rid of any sneaky trailing spaces
   fileName <- trimws(fileName)
   
@@ -99,16 +99,16 @@ writeLines(as.character(sentiments))
 
 # disambiguate Bush Sr. and George W. Bush 
 # correct president in applicable rows
-bushSr <- sentiments %>% 
-  filter(president == "Bush") %>% # get rows where the president is named "Bush"...
-  filter(year < 2000) %>% # ...and the year is before 200
-  mutate(president = "Bush Sr.") # and change "Bush" to "Bush Sr."
+# bushSr <- sentiments %>% 
+#  filter(president == "Bush") %>% # get rows where the president is named "Bush"...
+#  filter(year < 2000) %>% # ...and the year is before 200
+#  mutate(president = "Bush Sr.") # and change "Bush" to "Bush Sr."
 
 # remove incorrect rows
-sentiments <- anti_join(sentiments, sentiments[sentiments$president == "Bush" & sentiments$year < 2000, ])
+# sentiments <- anti_join(sentiments, sentiments[sentiments$president == "Bush" & sentiments$year < 2000, ])
 
 # add corrected rows to data_frame 
-sentiments <- full_join(sentiments, bushSr)
+# sentiments <- full_join(sentiments, bushSr)
 
 # summarize the sentiment measures
 summary(sentiments)
@@ -122,9 +122,49 @@ ggplot(sentiments, aes(x = as.numeric(year), y = sentiment)) +
   geom_point(aes(color = president))+ # add points to our plot, color-coded by president
   geom_smooth(method = "auto") # pick a method & fit a model
 #haha these colors are messed up but it's cool lookin'. will have to dig into this code to see what it's doing with the colors.
+#oh i see, the colors are just assigned alphabetircally but they are plotted by year.
 
 # plot of sentiment by president
 ggplot(sentiments, aes(x = president, y = sentiment, color = president)) + 
   geom_boxplot() # draw a boxplot for each president
-#curious about why some of these don't appear as boxes (or maybe the dot just doesn't overlap the box somehow?)  
+ #curious about why some of these don't appear as boxes (or maybe the dot just doesn't overlap the box somehow?)  
 
+# is the difference between parties significant?
+# get democratic presidents & add party affiliation
+democrats=0
+democrats = sentiments %>%
+  filter(president == c("Clinton" , "Obama", "Jackson", "vanBuren", "Polk")) %>%
+  mutate(party = "D")
+
+democrats2 = sentiments %>%
+  filter(president == c("Pierce", "Buchanan", "Johnson", "Cleveland","Wilson")) %>%
+  mutate(party = "D")
+
+democrats3 = sentiments %>%
+  filter(president == c("FDR","Truman","Kennedy","LBJ","Carter")) %>%
+  mutate(party = "D")
+
+# get republican presidents & party add affiliation
+republicans = sentiments %>%
+  filter(president == c("Lincoln","Grant","Hayes","Garfield","Arthur","Harrison","McKinley","TRoosevelt","Taft","Harding","Coolidge","Hoover","Eisenhower","Nixon","Ford","Reagan","HWBush","WBush","Trump")) %>%
+  mutate(party = "R")
+# i'm not understanding why there's an error here. it doesn't seem necessary to define the length of "republicans" anywhere, why is it defining 5 as the maximum length?
+
+summary(democrats)
+writeLines(as.character(democrats))
+
+summary(republicans)
+writeLines(as.character(republicans))
+
+#join dems
+byDems = full_join(democrats, democrats2, democrats3)
+
+# join both
+byParty <- full_join(democrats, republicans)
+
+# the difference between the parties is significant
+t.test(democrats$sentiment, republicans$sentiment)
+
+# plot sentiment by party
+ggplot(byParty, aes(x = party, y = sentiment, color = party)) + geom_boxplot() + geom_point()
+# this is not working right when generating the democrat and republican lists - need to investigate.

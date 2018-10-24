@@ -6,13 +6,13 @@
 getwd()
 
 #set working directory
-setwd("~/git/sotu-db/speeches-gutenberg")
+setwd("/home/manager/git/sotu-db/speeches-gutenberg")
 
 #load the text mining library
 library(tm)
 
 #create corpus
-SOTUs = Corpus(DirSource("~/git/sotu-db/speeches-gutenberg"))
+SOTUs = Corpus(DirSource("/home/manager/git/sotu-db/speeches-gutenberg"))
 #there has to be a way to just say "working directory..."
 # can use = or <- for assignment
 
@@ -167,7 +167,7 @@ wf=data.frame(term=names(freq),occurrences=freq)
 library(ggplot2)
 
 #invoke ggplot, only terms occurring 2000+ times, "aes" is for aesthetics, i guess?
-p = ggplot(subset(wf, freq>2000), aes(term, occurrences))
+p = ggplot(subset(wf, freq>2500), aes(term, occurrences))
 
 #map bar height to the data value that is mapped to the y-axis(i.e occurrences)
 p = p + geom_bar(stat="identity")
