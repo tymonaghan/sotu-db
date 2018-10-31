@@ -7,6 +7,9 @@
 #any sentiment analysis, 
 #does not remove punctuation
 
+#Be sure to setwd as speeches-ucsb-pres-project
+#setwd("home/manager/git/sotu-db/speeches-ucsb-pres-project")
+
 library(tidyverse)
 library(tidytext)
 library(glue)
@@ -41,9 +44,9 @@ GetTidy = function(file) {
     #group_by(president) %>%
     mutate(file = file) %>% # add the name of our file
     mutate(year = as.numeric(str_match(file, "\\d{4}"))) %>% # add the year
+    mutate(linenumber = row_number()) %>% #line number currently is just one "line" per token but at least it gives its position within the SOTU
     # REGEX for yyyy-Potusname-m-d.txt, uncomment to use: 
     # mutate(president = str_match(file, "(?<=-)[A-z]+(?=-)")) %>% #thanks @RJP43 for helping with this REGEX
-    
     # REGEX for mm-dd-yyyy-potusname.md
     mutate(president = str_match(file, "(?<=-)[A-z]+(?=.md)")) #%>%
     

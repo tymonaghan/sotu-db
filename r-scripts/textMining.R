@@ -31,24 +31,24 @@ writeLines(as.character(SOTUs[[1]]))
 getTransformations()
 
 #build content transformer "toSpace" which will replace chars with spaces
-toSpace = content_transformer(function(x,pattern) {return (gsub(pattern, " ", x))})
+#toSpace = content_transformer(function(x,pattern) {return (gsub(pattern, " ", x))})
 
 
 
 #use toSpace to replace hyphens with spaces
-SOTUs2 = tm_map(SOTUs, toSpace, "-")
+#SOTUs2 = tm_map(SOTUs, toSpace, "-")
 
 #use toSpace to replace colons with spaces
-SOTUs2 = tm_map(SOTUs2, toSpace, ":")
+#SOTUs2 = tm_map(SOTUs2, toSpace, ":")
 
 #inspect a particular document
-writeLines(as.character(SOTUs3[[20]]))
+#writeLines(as.character(SOTUs3[[20]]))
 
 #use toSpace to replace semicolons with spaces
 #SOTUs2 = tm_map(SOTUs2, toSpace, ";")
 
 #use toSpace to replace percent-signs with spaces
-SOTUs2 = tm_map(SOTUs2, toSpace, "%")
+#SOTUs2 = tm_map(SOTUs2, toSpace, "%")
 
 #use toSpace to replace dollar-signs with spaces
 #SOTUs2 = tm_map(SOTUs2, toSpace, "$")
@@ -72,7 +72,7 @@ writeLines(as.character(SOTUs2[[20]]))
 #SOTUs3 = tm_map(SOTUs2, replaceDollars)
 
 #this makes a totally fucked up SOTUs3 file so, use remove to remove it:
-remove(SOTUs3)
+#remove(SOTUs3)
 
 #turns out there's already a function to remove punctuation built into tm:
 SOTUs3 = tm_map(SOTUs2, removePunctuation)
@@ -85,7 +85,7 @@ SOTUs4 = tm_map(SOTUs3,content_transformer(tolower))
 writeLines(as.character(SOTUs4[[20]]))
 
 #Strip digits (std transformation, so no need for content_transformer)
-docs <- tm_map(docs, removeNumbers)
+#docs <- tm_map(docs, removeNumbers)
 #not using this because numbers could be useful.
 
 #remove stopwords using the standard list in tm
@@ -117,13 +117,13 @@ stemmedSOTUs = tm_map(stemmedSOTUs, content_transformer(gsub), pattern = "[wordT
 #################################
 
 # generate DTM from simpleCorpus
-dtm = DocumentTermMatrix(stemmedSOTUs)
+dtm = DocumentTermMatrix(SOTUs4)
 
 #inspect the dtm
 dtm
 
 # display terms 1000 through 1005 in the first two rows of the DTM.
-inspect(dtm[1:2,1000:1005])
+inspect(dtm[1:10,1:40])
 
 ############
 ## mining ##
