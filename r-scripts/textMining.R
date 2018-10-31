@@ -45,41 +45,44 @@ SOTUs2 = tm_map(SOTUs2, toSpace, ":")
 writeLines(as.character(SOTUs3[[20]]))
 
 #use toSpace to replace semicolons with spaces
-SOTUs2 = tm_map(SOTUs2, toSpace, ";")
+#SOTUs2 = tm_map(SOTUs2, toSpace, ";")
 
 #use toSpace to replace percent-signs with spaces
 SOTUs2 = tm_map(SOTUs2, toSpace, "%")
 
 #use toSpace to replace dollar-signs with spaces
-SOTUs2 = tm_map(SOTUs2, toSpace, "$")
+#SOTUs2 = tm_map(SOTUs2, toSpace, "$")
 # this is not working.
 ## hey so according to my other script that I'm borrowing, $ are special characters in R! I should maybe try "\\$"
 
 #RYO: build content transformer to swap $ for "dollars"
-toDollars = content_transformer(function(x,pattern) {return (gsub(pattern, "dollars", x))})
+toDollars = content_transformer(function(x,pattern) {return (gsub(pattern, "dollars ", x))})
 
 #use toDollars to change dollar signs to "dollars"
-SOTUs3 = tm_map(SOTUs2, toDollars, "$")
+SOTUs2 = tm_map(SOTUs, toDollars, "\\$")
 #this shit isn't working either wtf
 
+#inspect a particular document
+writeLines(as.character(SOTUs2[[20]]))
+
 #lets try one more:
-replaceDollars = function(x) gsub("?","dollars",x)
+#replaceDollars = function(x) gsub("?","dollars",x)
 
 #then:
-SOTUs3 = tm_map(SOTUs2, replaceDollars)
+#SOTUs3 = tm_map(SOTUs2, replaceDollars)
 
 #this makes a totally fucked up SOTUs3 file so, use remove to remove it:
 remove(SOTUs3)
 
 #turns out there's already a function to remove punctuation built into tm:
-SOTUs3 = tm_map(SOTUs, removePunctuation)
+SOTUs3 = tm_map(SOTUs2, removePunctuation)
 #yeah that worked. would still like to replace $ with "dollars" though.
 
 #Transform to lower case (need to wrap in content_transformer)
 SOTUs4 = tm_map(SOTUs3,content_transformer(tolower))
 
 #inspect a particular document
-writeLines(as.character(SOTUs3[[20]]))
+writeLines(as.character(SOTUs4[[20]]))
 
 #Strip digits (std transformation, so no need for content_transformer)
 docs <- tm_map(docs, removeNumbers)
@@ -107,6 +110,8 @@ writeLines(as.character(stemmedSOTUs[[30]]))
 #fix errors
 stemmedSOTUs = tm_map(stemmedSOTUs, content_transformer(gsub), pattern = "[wordToReplace]", replacement = "[replacementWord]")
 
+# SOTUs7 = tm_map(SOTUs6, content_transformer(gsub), pattern = "fellowcitizens", replacement = "fellow citizens")
+
 #################################
 ## Create document-term matrix ##
 #################################
@@ -118,7 +123,7 @@ dtm = DocumentTermMatrix(stemmedSOTUs)
 dtm
 
 # display terms 1000 through 1005 in the first two rows of the DTM.
-inspect(dtm[1:2,1000:10005])
+inspect(dtm[1:2,1000:1005])
 
 ############
 ## mining ##
