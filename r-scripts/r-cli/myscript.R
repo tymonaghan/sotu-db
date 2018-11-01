@@ -3,9 +3,12 @@ library(tidytext)
 library(glue)
 library(stringr)
 
-lines <- readLines(con = file("stdin"))
+lines <- readLines(con = file("1790-01-08-washington.md"))
 lineCount <- length(lines)
-lines %>%
+
+tokens <- data_frame(text = lines) %>% unnest_tokens(word, text)
+
+tokens %>%
   inner_join(get_sentiments("bing")) %>%
   count(sentiment) %>%
   spread(sentiment, n, fill = 0) %>%
