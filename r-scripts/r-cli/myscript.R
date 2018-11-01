@@ -3,7 +3,7 @@ library(tidytext)
 library(glue)
 library(stringr)
 
-lines <- readLines(con = file("1790-01-08-washington.md"))
+lines <- readLines(con = file("../../speeches-ucsb-pres-project/no-whitespace/1790-01-08-washington.md"))
 lineCount <- length(lines)
 
 tokens <- data_frame(text = lines) %>% unnest_tokens(word, text)
