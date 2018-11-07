@@ -1,4 +1,0 @@
-# A tibble: 1 x 3
-  negative positive sentiment
-     <dbl>    <dbl>     <dbl>
-1       15       87        72
