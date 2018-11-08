@@ -1,7 +1,7 @@
 <html>
 <body>
 <?php
-`Rscript ../r-scripts/quick-SOTU-sum.R >> newsents.txt 2>&1`
+`C:\"Program Files"\R\R-3.5.1\bin\Rscript.exe ../r-scripts/quick-SOTU-sum.R >> newsents.txt`;
 ?>
 </body>
 </html>
