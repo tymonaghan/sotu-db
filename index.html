@@ -17,7 +17,7 @@
     </div>
     <div><br><br></div>
     <div class="w3-cell-row w3-margin w3-padding">
-      <div class="w3-cell w3-twothirds w3-padding w3-mobile">
+      <div class="w3-cell w3-twothird w3-padding w3-mobile">
 
         <div class="w3-card w3-block-bar" style="min-height:400px">
           <header class="w3-container w3-light-gray">
@@ -81,15 +81,26 @@
           </div> <!-- end fileviewer -->
         </div> <!-- end w3-card -->
       </div> <!-- end w3-cell -->
-      <!--
-      <div id="gutter" class="w3-cell w3-mobile" style="width:3%">
-      </div>
--->
-      <div class="w3-cell w3-mobile w3-rest w3-padding">
-        <a href="https://twitter.com/SOTU_db?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SOTU_db</a>
-        <a class="twitter-timeline" href="https://twitter.com/SOTU_db/lists/presidential-libraries?ref_src=twsrc%5Etfw">A Twitter List by SOTU_db</a>
-      </div>
-    </div>
+
+      <div id="socialBar" class="w3-cell w3-right">
+        <div id="socialBarMinimized" class="w3-container w3-animate-right w3-show">
+          <button class="w3-button w3-square w3-purple" style="height:200px; margin-right:-15px" onclick="toggleSocialBar('max')"><i class="fa fa-share-alt"></i><br><i class="fa fa-chevron-left"></i></button>
+        </div> <!-- end socialBarMinimized -->
+
+        <div id="socialBarMaximized" class="w3-cell w3-rest w3-animate-right w3-hide">
+          <div class="w3-cell-row">
+            <div id="col1" class="w3-cell">
+              <button class="w3-button w3-square w3-purple" style="height:200px" onclick="toggleSocialBar('min')"><i class="fa fa-share-alt"></i><br><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <div id="col2" class="w3-cell w3-right">
+              <a href="https://twitter.com/SOTU_db?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SOTU_db</a>
+              <a class="twitter-timeline" href="https://twitter.com/SOTU_db/lists/presidential-libraries?ref_src=twsrc%5Etfw">A Twitter List by SOTU_db</a>
+            </div>
+          </div>
+        </div> <!-- end socialBarMaximized -->
+      </div> <!-- end socialBar -->
+
+    </div> <!-- end body -->
 
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -117,6 +128,18 @@
             li[i].style.display = "none";
           }
         }
+      }
+
+      function toggleSocialBar(_status) {
+        if (_status == "max") {
+          var x = document.getElementById("socialBarMaximized");
+          var y = document.getElementById("socialBarMinimized");
+        } else {
+          var y = document.getElementById("socialBarMaximized");
+          var x = document.getElementById("socialBarMinimized");
+        }
+        x.className = x.className.replace(" w3-hide", " w3-show");
+        y.className = x.className.replace(" w3-show", " w3-hide");
       }
 
       function loadSOTUforViewer(year) {
