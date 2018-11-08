@@ -7,3 +7,4 @@
 4. **Edge** browser, developer tools
 5. **HTML** web page markup language and content
 6. **W3 CSS** style framework
+7. **Ubuntu 18.04.1 LTS (Bionic Beaver)** server OS
