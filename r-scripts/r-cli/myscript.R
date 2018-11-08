@@ -13,5 +13,3 @@ tokens %>%
   count(sentiment) %>%
   spread(sentiment, n, fill = 0) %>%
   mutate(sentiment = positive - negative)
-
-sink("sentiments.txt")
