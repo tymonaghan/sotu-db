@@ -17,12 +17,17 @@ return $data;
 if ($term == "obama"){
   $myFile = fopen("../speeches-ucsb-pres-project/2012-01-24-obama.md", "r");
   $path = "../speeches-ucsb-pres-project/2012-01-24-obama.md";
+  echo fread($myFile, filesize($path));
+
 } else if ($term == "washington") {
   $myFile = fopen("../speeches-ucsb-pres-project/1790-01-08-washington.md","r");
   $path = "../speeches-ucsb-pres-project/1790-01-08-washington.md";
+  echo fread($myFile, filesize($path));
 } else {
   $myFile = "your file wasn't found, try searching for washington or obama.";
   $path = strlen($myFile);
+  echo $myFile;
+
 }
 #exec("Rscript ../r-scripts/quick-SOTU-sum.R", $output);
 #$myFile = fopen("sentiments.txt", "w"); #opens (and creates if necessary) sentiments.txt as $myFile
@@ -43,7 +48,6 @@ if ($term == "obama"){
 # the parameters are (file to open/write, data to write, flags [FILE_APPEND] writes in append instead of overwrite mode
 
 #$outputt = fopen("sentiments.txt","r");
-echo fread($myFile, filesize($path));
 
 ?>
 <br>
