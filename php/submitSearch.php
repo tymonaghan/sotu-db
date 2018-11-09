@@ -36,16 +36,24 @@
   if ($term == "obama"){
     $myFile = fopen("../speeches-ucsb-pres-project/2012-01-24-obama.md", "r");
     $path = "../speeches-ucsb-pres-project/2012-01-24-obama.md";
+    `C:\"Program Files"\R\R-3.5.1\bin\Rscript.exe ../r-scripts/demo/quick-SOTU-sum.R > newsents.txt`;
+    `C:\"Program Files"\R\R-3.5.1\bin\Rscript.exe ../r-scripts/demo/tibble-2012.R >> newsents.txt`;
+
     #echo fread($myFile, filesize($path));
 
   } else if ($term == "washington") {
     $myFile = fopen("../speeches-ucsb-pres-project/1790-01-08-washington.md","r");
     $path = "../speeches-ucsb-pres-project/1790-01-08-washington.md";
+    `C:\"Program Files"\R\R-3.5.1\bin\Rscript.exe ../r-scripts/demo/quick-SOTU-sum.R > newsents.txt`;
+    `C:\"Program Files"\R\R-3.5.1\bin\Rscript.exe ../r-scripts/demo/tibble-1790.R >> newsents.txt`;
+
   } else {
     $myFile = fopen("../msg/search-error-demo.txt","r");
     $path = "../msg/search-error-demo.txt";
 
   }
+
+$sentiments = fopen("newsents.txt","r");
 
   ?>
 
@@ -72,6 +80,16 @@
 
           </div>
         </div> <!-- end card -->
+        <br><br>
+<div class="w3-card w3-white w3-bar-block">
+  <div class = "w3-bar w3-padding w3-purple">
+    <h1>sentiment info</h1>
+  </div> <!-- end titlebar -->
+  <div class ="w3-bar w3-white w3-padding">
+    <?php echo fread($sentiments,filesize("newsents.txt")) ?>
+  </div>
+</div> <!-- end card -->
+
       </div> <!-- end cell 1 -->
 
       <div class="w3-cell">
