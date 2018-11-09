@@ -32,7 +32,7 @@
             <button class="w3-bar-item w3-button w3-border-top w3-border-right tablink" onclick="openTab('fileviewer')" id="fileviewerbutton">File viewer</button>
           </div> <!-- end w3-bar tab-bar -->
           <div id="search" class="tab w3-container w3-padding">
-            <form method="GET" action="/php/createCorpusScript.php">
+            <form method="GET" action="/php/submitSearch.php">
               <label>Enter your search term:</label>
               <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="try Obama or Washington..." id="searchBox" required></input>
 
@@ -55,7 +55,7 @@
               <p>Search for a name in the input field.</p>
               <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="filterSearchBox" onkeyup="updateFilterSearch()">
               <ul class="w3-ul w3-margin-top" id="myUL">
-                <li><a href="#">Washington</a></li>
+                <li><a href="php/submitSearch.php?searchTerm=washington">Washington</a></li>
                 <li><a href="#">Adams</a></li>
                 <li><a href="#">Jefferson</a></li>
                 <li><a href="#">Madison</a></li>
