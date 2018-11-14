@@ -8,3 +8,9 @@
 5. **HTML** web page markup language and content
 6. **W3 CSS** style framework
 7. **Ubuntu 18.04.1 LTS (Bionic Beaver)** server OS
+8. **R** statistical language for text mining and sentiment analysis
+9. **RStudio** server-side IDE for R
+10. **GitHub** version control and cloud storage
+11. **Windows 10 Pro**
+
+Where should credit for digital projects begin and end? I relied upon countless software and hardware developers, manufacturers, bloggers, assembly line employees, etc. for the hardware and software on which SOTU-db runs. SOTU-db wouldn't work without employees of the telecoms that serve my house, Loyola University Chicago, and the datacenters where my data lives and whence it is served. The personal and professional networks of which I'm a part, and even Donald Trump, deserve some share of credit for inspiring this project and helping me to envision and instantiate it. If physical exercise is as generative to the creative process as it seems, then even the manufacturers of my ice skates or shoes are part of the toolchain that made SOTU-db possible. Deciding where to draw the line and what products and influences to cite is a subjective and messy process.
