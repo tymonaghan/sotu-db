@@ -50,6 +50,7 @@ the C-Span sources.)
 - file headers omitted (president name, date)
 - salutations included
 - signatures omitted (captured in index)
+- some files contain "the president." and "audience members." to show who is speaking. Undecided how to address these.
 
 ## Metadata
 The SOTU-db master index captures the following metadata for each SOTU:
