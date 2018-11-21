@@ -34,12 +34,33 @@ the C-Span sources.)
   - Carter's written reports are excluded
 - **speeches-gutenberg** includes 213 SOTUs from 1790 - 2006.
   - Grover Cleveland's second term is omitted
+  - Only one SOTU per year is provided for Jimmy Carter (Carter provided both verbal and written SOTUs in 1978-80)
   - Speeches from Obama (2016) and Trump (2018) are included in this folder but are *not* sourced from project Gutenberg
 - **speeches-ucsb-pres-project** is still being compiled.
 
+### File Naming Scheme
+- **speeches-cspan:** yyyy-Presidentlastname.txt
+- **speeches-gutenberg:** yyyy-Presidentname-m-dd-p.txt
+<br>  - In some cases, friendly names are used; "FDR," "BenHarrison," "WBush," "HWBush," etc
+- **speeches-ucsb-pres-project:** yyyy-mm-dd-Presidentlastname.md
+<br>  - Jimmy Carter's 1978 SOTUs have a v for verbal and w for written inserted as in: "1978-01-19-v-carter.md"
+
+
 ### Editorial Policy
+#### General Editorial Policy
+##### Signatures
+As many annual addresses were delivered in writing rather than verbally, some documents contain signatures. These are often just the President's name, but can also contain dates or locations ("The White House").  Except un-edited texts (such as the C-Span corpus), signatures have been omitted from the texts used in this project.
+
+##### Salutations
+ Salutations ("Gentlemen of the House of Representatives") have been left intact.
+
+##### Bullet Points and Headings
+Some SOTUs make use of bullet points and headings. In general, these are preserved within the SOTU-db texts, in accordance with their presentation in the source material. The texts have not been thoroughly checked for consistency in the rendering of bullet points; these will generally be excluded from the texts as a part of processing.
+
+#### Corpus-specific Editorial Policies
 **speeches-cspan:**
 - no editing
+- this preserves a large number of strange characters and inconsistencies in the texts
 
 **speeches-gutenberg:**
 - file headers omitted (president name, date)
@@ -64,5 +85,3 @@ The SOTU-db master index captures the following metadata for each SOTU:
 In the future, SOTU-db could include:
 - the president's approval rating at the time the SOTU was delivered
 - the president's months in office at the time the SOTU was delivered
-
-As many annual addresses were delivered in writing rather than verbally, some documents contain signatures. These have been omitted from the texts used in this project. Salutations ("Gentlemen of the House of Representatives") have been left intact.
