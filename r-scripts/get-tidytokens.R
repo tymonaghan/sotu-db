@@ -8,7 +8,8 @@
 #does not remove punctuation
 
 #Be sure to setwd as speeches-ucsb-pres-project
-#setwd("home/manager/git/sotu-db/speeches-ucsb-pres-project")
+#setwd("/home/manager/git/sotu-db/speeches-ucsb-pres-project")
+setwd("C:/Users/tnmon/git/sotu-db/speeches-ucsb-pres-project")
 
 library(tidyverse)
 library(tidytext)
@@ -19,9 +20,9 @@ library(dplyr)
 
 
 files <- list.files("./") # get a list of the files in the input directory
-  
 #files <- SOTUs4 # get a list of the documents in SOTUs4
-toDollars = content_transformer(function(x,pattern) {return (gsub(pattern, "dollars ", x))}) #use toDollars to change dollar signs to "dollars"
+
+#toDollars = content_transformer(function(x,pattern) {return (gsub(pattern, "dollars ", x))}) #use toDollars to change dollar signs to "dollars"
 tidytokens = data_frame() #make the tidytokens data_frame (empty for now)
 
 #my transformations:
