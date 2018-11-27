@@ -10,10 +10,16 @@ SOTUtoDisplay = args[1]
 
 #### load packages, setwd ####
 setwd("C:/Users/tnmon/git/sotu-db/speeches-sample")
+#setwd(/var/www/sotu-db.cs.luc.edu/html)
 library(tm)
+library(SentimentAnalysis)
+library(ggplot2)
 
 #### create corpus ####
 SOTUs = Corpus(DirSource("./"))
+
+#### create sentiment table ####
+sentiment = analyzeSentiment(SOTUs[SOTUtoDisplay])
 
 #### inspect document ####
 
