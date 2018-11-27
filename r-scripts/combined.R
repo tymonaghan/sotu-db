@@ -24,6 +24,7 @@ library(glue)
 library(stringr)
 library(tm)
 library(dplyr)
+library(ggplot2)
 
 
 files <- list.files("./") # get a list of the files in the input directory
@@ -75,14 +76,6 @@ for(i in files){
 #### environment prerequisites ####
 # must have already created tidytokens tibble
 
-
-
-#### load packages ####
-#not needed if tidyverse is already loaded:
-library(dplyr)
-library(stringr)
-library(ggplot2)
-yearToSearch
 
 #### select year and chunk size ####
 #yearToSearch = 1793
