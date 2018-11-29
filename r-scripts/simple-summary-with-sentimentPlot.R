@@ -25,9 +25,10 @@ library(tm)
 library(dplyr)
 library(ggplot2)
 
-load("C:/Users/tnmon/git/sotu-db/r-env/tidytokens-sample.RData")
+#load("C:/Users/tnmon/git/sotu-db/r-env/tidytokens-sample.RData")
+load("/var/www/sotu-db.cs.luc.edu/html/r-env/tidytokens-sample.RData")
 #setwd("C:/Users/tnmon/git/sotu-db/speeches-sample")
-setwd("/var/www/sotu-db.cs.luc.edu/html")
+setwd("/var/www/sotu-db.cs.luc.edu/html/speeches-sample")
 
 
 #### create singleSOTU from yearSearched ####
@@ -53,7 +54,7 @@ bing_and_nrc = bind_rows(singleSOTU %>% inner_join(get_sentiments("bing")) %>%
 #### bind and visualize ####
 
 #output to png
-png("../output/plot.png")
+png("/var/www/sotu-db.cs.luc.edu/html/output/plot.png")
 bind_rows(afinn, bing_and_nrc) %>% 
   ggplot(aes(index, sentiment, fill = method)) + 
   geom_col(show.legend = FALSE) + 
