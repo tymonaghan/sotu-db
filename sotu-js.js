@@ -25,11 +25,11 @@ function updateFilterSearch() {
 
 function loadSOTUforViewer(year) {
   if (year == 1790) {
-    document.getElementById("fileViewerFrame").src = "sample-texts/1790-01-08-washington.md"
+    document.getElementById("fileViewerFrame").src = "speeches-ucsb-pres-project/1790-01-08-washington.md"
   } else if (year == 1797) {
-    document.getElementById("fileViewerFrame").src = "sample-texts/1797-11-22-adams.md"
+    document.getElementById("fileViewerFrame").src = "speeches-ucsb-pres-project/1797-11-22-adams.md"
   } else if (year == 2012) {
-    document.getElementById("fileViewerFrame").src = "sample-texts/2012-01-24-obama.md"
+    document.getElementById("fileViewerFrame").src = "speeches-ucsb-pres-project/2012-01-24-obama.md"
   }
 } //end loadSOTUforViewer
 
