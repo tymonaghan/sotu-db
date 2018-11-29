@@ -15,8 +15,8 @@
       <!-- top menu bar -->
       <?php include './php/topnav.php';?>
     </div>
-    <div class="w3-bar w3-pale-yellow" onclick="document.getElementById('restrictionsModal').style.display='block'">
-      <p>SOTU-db is currently in a limited alpha state. <span class="w3-button">Click here</span> to learn about the restrictions in place.</p>
+    <div class="w3-bar w3-pale-yellow w3-center w3-border" onclick="document.getElementById('restrictionsModal').style.display='block'">
+      <p>SOTU-db is currently in a limited alpha state. <span class="w3-button w3-border w3-border-orange w3-round-xlarge">Click here</span> to learn about the restrictions in place.</p>
     </div>
 
     <div id="restrictionsModal" class="w3-modal">
@@ -34,6 +34,7 @@
             <li>chunkSize sets the size of chunks of text (in words) for which SOTU-db will return sentiment. Smaller chunkSize means more datapoints, less context.</li>
             <li>unexpected results may occur when checking multiple chunkSize checkboxes. When none are selected, chunkSize defaults to 65 words</li>
             <li>scrolling is not functional on results page, and you will see strange formatting, extra text fragments, etc</li>
+	    <li>SOTU-db can currently only handle one session at a time. If another use attempts to access SOTU-db while you are using it, you will experience strange behaviors</li>
             <li>you may encounter other limitations or unexpected behaviors, or the site may go offline entirely without warning</li>
           </ul>
         </div>
