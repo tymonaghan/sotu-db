@@ -17,8 +17,10 @@
   <body>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
-      $year = $_GET["searchTerm"];
-      $chunkSize = $_GET["chunkSize"];
+      $rawYear = $_GET["searchTerm"];
+      $rawChunkSize = $_GET["chunkSize"];
+      $year = escapeshellcmd($rawYear);
+      $chunkSize = escapeshellcmd($rawChunkSize);
     } //if the form is filled out, clean the "searchTerm" and store as year
 
 #$output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/simple-summary-with-sentimentPlot.R $year $chunkSize`;
@@ -28,7 +30,7 @@ $output = `/usr/lib/R/bin/Rscript ../r-scripts/simple-summary-with-sentimentPlot
   <div class="w3-top">
     <?php include 'topnav.php';?>
   </div> <!-- end w3-top -->
-<div class="w3-content">
+<div class="w3-content w3-container">
   <div class = "w3-card w3-white">
     <img src="../output/plot.png">
 </div>
