@@ -5,11 +5,11 @@
 
 #WHAT THIS SCRIPT DOES NOT DO
 #any sentiment analysis, 
-#does not remove punctuation
+#does not remove punctuation - wait yes it does!
 
 #Be sure to setwd as speeches-ucsb-pres-project
 #setwd("/home/manager/git/sotu-db/speeches-ucsb-pres-project")
-setwd("C:/Users/tnmon/git/sotu-db/speeches-ucsb-pres-project")
+setwd("C:/Users/tnmon/git/sotu-db/speeches-sample")
 
 library(tidyverse)
 library(tidytext)
@@ -26,11 +26,11 @@ files <- list.files("./") # get a list of the files in the input directory
 tidytokens = data_frame() #make the tidytokens data_frame (empty for now)
 
 #my transformations:
-#for(i in files){
-#fileText = tm_map(fileText, toDollars, "\\$") #replace $ with "dollars"
+for(i in files){
+fileText = tm_map(fileText, toDollars, "\\$") #replace $ with "dollars"
 #fileText = tm_map(fileText, removePunctuation)  #remove punctuation
 #fileText = tm_map(fileText,content_transformer(tolower)) #Transform to lower case (need to wrap in content_transformer)
-#} 
+} 
 
 GetTidy = function(file) {
   
@@ -39,7 +39,7 @@ GetTidy = function(file) {
   fileText <- glue(read_file(fileName))  # read in the new file
   #fileText <- read_file(file)  # read in the new file
   # tokenize
-  tokens <- data_frame(text = fileText) %>% unnest_tokens(word, text)
+  tokens <- data_frame(text = fileText) %>% unnest_tokens(word, text, to_lower=FALSE)
   
   tidytokens <- tokens %>%
     #group_by(president) %>%

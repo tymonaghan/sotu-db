@@ -32,7 +32,7 @@
             <button class="w3-bar-item w3-button w3-border-top w3-border-right tablink" onclick="openTab('fileviewer')" id="fileviewerbutton">File viewer</button>
           </div> <!-- end w3-bar tab-bar -->
           <div id="search" class="tab w3-container w3-padding">
-            <form method="GET" action="/php/super-simple-output-tester.php">
+            <form method="GET" action="php\slightly-less-simple-output-tester.php">
               <label>Enter your search term:</label>
               <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="try Obama or Washington..." id="searchBox" required></input>
 
@@ -40,12 +40,15 @@
 
               <input type="submit" value="Submit"></input>
               <div class="w3-right">
-                <input class="w3-check" type="checkbox">
-                <label>Written only</label></input>
-                <input class="w3-check" type="checkbox">
-                <label>Verbal only</label></input>
-                <input class="w3-check" type="checkbox" checked="checked">
-                <label>Both</label></input>
+                <h4>chunk size</h4>
+                <input class="w3-check" type="checkbox" name="chunkSize" id="chunkSize" value="25">
+                <label>25</label></input>
+                <input class="w3-check" type="checkbox" id="chunkSize" value="50" name="chunkSize">
+                <label>50</label></input>
+                <input class="w3-check" type="checkbox" checked="checked" id="chunkSize" value="75" name="chunkSize">
+                <label>75</label></input>
+                <input class="w3-check" type="checkbox" id="chunkSize" value="100" name="chunkSize">
+                <label>100</label></input>
               </div>
             </form>
           </div> <!-- end search -->
