@@ -5,14 +5,15 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105747352-3"></script>
     <script>
-       window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
        function gtag(){dataLayer.push(arguments);}
        gtag('js', new Date());
        gtag('config', 'UA-105747352-3');
     </script>
 
-
+    <!--
     <meta name="viewport" content="width=device-width, initial-scale=1">
+  -->
     <link rel="icon" href="https://github.com/tymonaghan/sotu-db/raw/master/images/favicon.png">
     <link rel="stylesheet" href="/style/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -44,7 +45,7 @@
             <li>chunkSize sets the size of chunks of text (in words) for which SOTU-db will return sentiment. Smaller chunkSize means more datapoints, less context.</li>
             <li>unexpected results may occur when checking multiple chunkSize checkboxes. When none are selected, chunkSize defaults to 65 words</li>
             <li>scrolling is not functional on results page, and you will see strange formatting, extra text fragments, etc</li>
-	    <li>SOTU-db can currently only handle one session at a time. If another use attempts to access SOTU-db while you are using it, you will experience strange behaviors</li>
+            <li>SOTU-db can currently only handle one session at a time. If another use attempts to access SOTU-db while you are using it, you will experience strange behaviors</li>
             <li>you may encounter other limitations or unexpected behaviors, or the site may go offline entirely without warning</li>
           </ul>
         </div>
@@ -138,8 +139,7 @@
     <script src="sotu-js.js"></script>
 
 
-    <script type="text/javascript" id="cookiebanner"
-      src="https://cdnjs.cloudflare.com/ajax/libs/cookie-banner/1.2.2/cookiebanner.min.js"></script>
+    <script type="text/javascript" id="cookiebanner" src="https://cdnjs.cloudflare.com/ajax/libs/cookie-banner/1.2.2/cookiebanner.min.js"></script>
   </body>
 
 </html>
