@@ -15,5 +15,6 @@
 12. Sentiment Lexicons:
 <br>  **Bing sentiment lexicon**
 <br> **NRC sentiment lexicon**
+13. **[dobarkod/cookie-banner](https://github.com/dobarkod/cookie-banner)** JavaScript based cookie-info banner for complying with EU cookie law
 
 Where should credit for digital projects begin and end? I relied upon countless software and hardware developers, manufacturers, bloggers, assembly line employees, etc. for the hardware and software on which SOTU-db runs. SOTU-db wouldn't work without employees of the telecoms that serve my house, Loyola University Chicago, and the datacenters where my data lives and whence it is served. The personal and professional networks of which I'm a part, and even Donald Trump, deserve some share of credit for inspiring this project and helping me to envision and instantiate it. If physical exercise is as generative to the creative process as it seems, then even the manufacturers of my ice skates or shoes are part of the toolchain that made SOTU-db possible. Deciding where to draw the line and what products and influences to cite is a subjective and messy process.
