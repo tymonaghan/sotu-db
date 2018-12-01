@@ -44,3 +44,15 @@ $output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/simple-summ
 ```
 $output = `/usr/lib/R/bin/Rscript ../r-scripts/simple-summary.R $year`;
 ```
+
+---
+
+##### simple-summary-with-sentimentPlot.R ####
+**line:** 28-31
+<br>**Windows:**
+```
+$output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/simple-summary.R $year`;
+```
+<br>**Ubuntu:**
+```
+$output = `/usr/lib/R/bin/Rscript ../r-scripts/simple-summary.R $year`;

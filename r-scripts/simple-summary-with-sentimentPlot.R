@@ -26,9 +26,11 @@ library(dplyr)
 library(ggplot2)
 
 #load("C:/Users/tnmon/git/sotu-db/r-env/tidytokens-sample.RData")
-load("/var/www/sotu-db.cs.luc.edu/html/r-env/tidytokens-sample.RData")
+#load("/var/www/sotu-db.cs.luc.edu/html/r-env/tidytokens-sample.RData")
+load("../r-env/tidytokens-sample.RData")
 #setwd("C:/Users/tnmon/git/sotu-db/speeches-sample")
-setwd("/var/www/sotu-db.cs.luc.edu/html/speeches-sample")
+#setwd("/var/www/sotu-db.cs.luc.edu/html/speeches-sample")
+#setwd("../speeches-sample")
 
 
 #### create singleSOTU from yearSearched ####
@@ -36,31 +38,32 @@ singleSOTU <- tidytokens %>% filter(year == yearSearched)
 
 
 #### find sent-scores for afinn, bing, nrc ####
-afinn = singleSOTU %>% 
-  inner_join(get_sentiments("afinn")) %>% 
-  group_by(index = linenumber%/%chunkSize) %>% 
-  summarise(sentiment = sum(score)) %>% 
+afinn = singleSOTU %>%
+  inner_join(get_sentiments("afinn")) %>%
+  group_by(index = linenumber%/%chunkSize) %>%
+  summarise(sentiment = sum(score)) %>%
   mutate(method = "AFINN")
 
-bing_and_nrc = bind_rows(singleSOTU %>% inner_join(get_sentiments("bing")) %>% 
-  mutate(method = "Bing et al."), singleSOTU %>% 
+bing_and_nrc = bind_rows(singleSOTU %>% inner_join(get_sentiments("bing")) %>%
+  mutate(method = "Bing et al."), singleSOTU %>%
   inner_join(get_sentiments("nrc") %>%
-  filter(sentiment %in% c("positive", "negative"))) %>% 
-  mutate(method = "NRC")) %>% 
-  count(method, index = linenumber%/%chunkSize, sentiment) %>% 
-  spread(sentiment, n, fill = 0) %>% 
+  filter(sentiment %in% c("positive", "negative"))) %>%
+  mutate(method = "NRC")) %>%
+  count(method, index = linenumber%/%chunkSize, sentiment) %>%
+  spread(sentiment, n, fill = 0) %>%
   mutate(sentiment = positive - negative)
 
 #### bind and visualize ####
 
 #output to png
-png("/var/www/sotu-db.cs.luc.edu/html/output/plot.png")
-bind_rows(afinn, bing_and_nrc) %>% 
-  ggplot(aes(index, sentiment, fill = method)) + 
-  geom_col(show.legend = FALSE) + 
+png("../output/plot.png")
+
+bind_rows(afinn, bing_and_nrc) %>%
+  ggplot(aes(index, sentiment, fill = method)) +
+  geom_col(show.legend = FALSE) +
   facet_wrap(~method, ncol = 1, scales = "free_y")+
   ggtitle(paste("Comparison of sentiment with 3 lexicons for", yearSearched, "\nChunk size:",chunkSize, "words"))
 dev.off()
 
-#### write SOTU to stdout #### 
+#### write SOTU to stdout ####
 writeLines(as.character(singleSOTU[[1]]))

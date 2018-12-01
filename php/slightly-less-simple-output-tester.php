@@ -23,8 +23,8 @@
       $chunkSize = escapeshellcmd($rawChunkSize);
     } //if the form is filled out, clean the "searchTerm" and store as year
 
-#$output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/simple-summary-with-sentimentPlot.R $year $chunkSize`;
-$output = `/usr/lib/R/bin/Rscript ../r-scripts/simple-summary-with-sentimentPlot.R {$year} {$chunkSize}`;
+$output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/simple-summary-with-sentimentPlot.R $year $chunkSize`;
+#$output = `/usr/lib/R/bin/Rscript ../r-scripts/simple-summary-with-sentimentPlot.R {$year} {$chunkSize}`;
 ?>
 
   <div class="w3-top">
