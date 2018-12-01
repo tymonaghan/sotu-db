@@ -48,11 +48,15 @@ $output = `/usr/lib/R/bin/Rscript ../r-scripts/simple-summary.R $year`;
 ---
 
 ##### simple-summary-with-sentimentPlot.R ####
+*this has been corrected and made platform-agnostic, previous details below:*
 **line:** 28-31
 <br>**Windows:**
 ```
-$output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/simple-summary.R $year`;
+#load("C:/Users/tnmon/git/sotu-db/r-env/tidytokens-sample.RData")
+#setwd("C:/Users/tnmon/git/sotu-db/speeches-sample")
 ```
 <br>**Ubuntu:**
 ```
-$output = `/usr/lib/R/bin/Rscript ../r-scripts/simple-summary.R $year`;
+#load("/var/www/sotu-db.cs.luc.edu/html/r-env/tidytokens-sample.RData")
+#setwd("/var/www/sotu-db.cs.luc.edu/html/speeches-sample")
+```
