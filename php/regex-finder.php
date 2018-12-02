@@ -30,7 +30,7 @@
     return $data;
     }
 
-    $output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/coreNLP-1.R $rawQuery $chunkSize`;
+    $output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/regex-finder.R $rawQuery`;
     ?>
 
     <div class="w3-top">
@@ -41,11 +41,12 @@
     <p>your query: <?php echo $query ?> </p>
     <p>using chunkSize of <?php echo $chunkSize ?> </p>
     <br>
-    <p><b>results:</b> <?php print_r($output); ?> </p>
+    <p><b>results:</b></p>
     <p>here is each instance of your query in Obama's 2013 SOTU:</p>
-    <iframe src="../output/test2.txt" label="test2" style="height:300px;width:100%">test 2</iframe>
-    <iframe src="../output/test3.txt" label="test3" style="height:300px;width:100%">test 3</iframe>
-    <iframe src="../output/test.txt" style="height:300px;width:100%">test.txt</iframe>
+    <h4>test22</h2>
+    <iframe src="../output/test22.txt" style="height:300px;width:100%"></iframe>
+    <h4>test11</h4>
+    <iframe src="../output/test11.txt" style="height:300px;width:100%"></iframe>
   </div> <!-- end w3-card -->
   </div> <!-- end w3-content div -->
 

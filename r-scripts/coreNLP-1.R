@@ -1,3 +1,4 @@
+#### handle input arguments ####
 args = commandArgs(trailingOnly=TRUE)
 # test if there is at least one argument: if not, return an error
 if (length(args)==0) {
@@ -8,17 +9,12 @@ if (length(args)==0) {
 } else {
   message("using year: " , args[1] , "\nusing chunk size:" , args[2])
 }
-userQuery = args[1]
+userQuery = toString(args[1])
 chunkSize = as.integer(args[2])
+plainTextSOTU = readLines("../speeches-sample/2013-02-12-obama.md")
+plainTextSOTU = gsub("\\$", "dollars", plainTextSOTU)
 
-#### silence output #### 
-#linux
-#sink("/dev/null")
-#windows
-#tempPath=file("../output/log.txt",open="w+")
-#tempPath2=file("..output/log-output.txt",open="w+")
-#sink(tempPath, type="message")
-#sink(tempPath2, type="output")
+
 #### load packages  and workspace ####
 library(tidyverse)
 library(tidytext)
@@ -27,12 +23,6 @@ library(stringr)
 library(tm)
 library(coreNLP)
 load("../r-env/tidytokens-sample.RData")
-#annotationByCoreNLP = annotateFile("../speeches-sample/2013-02-12-obama.md")
-#setwd("C:/users/tnmon/git/sotu-db/speeches-sample")
-#toDollars = content_transformer(function(x,pattern) {return (gsub(pattern, "dollars ", x))})
-#use toDollars to change dollar signs to "dollars"
-
-#annotationByCoreNLP = annotateString(plainTextSOTU)
 
 #### invoke coreNLP pipeline: pos, sentiment ####
 initCoreNLP()
@@ -42,14 +32,13 @@ initCoreNLP()
 #chunkSize = 65
 #yearSearched=2013
 #singleSOTU <- tidytokens %>% filter(year == yearSearched)
-plainTextSOTU = readLines("../speeches-sample/2013-02-12-obama.md")
-
 regexUserQuery = paste0("(?i)",userQuery)
 regexUserQuerySentence = paste0("[^.]*",regexUserQuery,"[^.]*\\.")
-
-
 #coreNLPtokens = getToken(annotationByCoreNLP)
 #sentiment = getSentiment(annotationByCoreNLP)
+userQuery
+regexUserQuery
+regexUserQuerySentence
 
 #### ? ####
 #matches = coreNLPtokens %>%
@@ -63,10 +52,11 @@ regexUserQuerySentence = paste0("[^.]*",regexUserQuery,"[^.]*\\.")
 #case insensitive:
 stringCountResult = str_count(plainTextSOTU, regexUserQuery)
 stringCountSum = sum(stringCountResult)
+lapply(glue("your term appears this many times: ",stringCountSum), write, "../output/test.txt", append=FALSE)
 
 
 #### str_subset(x,pattern) ####
-#str_subset(plainTextSOTU, "") 
+#str_subset(plainTextSOTU, "")
 #WTF
 
 #### str_locate(x,pattern) ####
@@ -77,16 +67,19 @@ stringExtractResults=str_extract_all(plainTextSOTU,regexUserQuery)
 stringExtractResultSimplified = str_extract_all(plainTextSOTU,regexUserQuery, simplify=TRUE)
 
 #### str_match_all(x,pattern) ####
-#this creates a list of 185, and the populated cells are the sentences with the users search word in them. 
+#this creates a list of 185, and the populated cells are the sentences with the users search word in them.
 stringMatchResult= str_match_all(plainTextSOTU, regexUserQuerySentence)
 stringMatchResult = stringMatchResult[lapply(stringMatchResult,length)>0]
 
 for (index in length(stringMatchResult)){
-  lapply(index, write, "c:/apache24/htdocs/output/test.txt", append=TRUE)
-  
+  lapply(index, write, "../output/test.txt", append=TRUE)
+
 }
 
-lapply(stringMatchResult, write, "c:/apache24/htdocs/output/test2.txt", append=FALSE)
+lapply(stringMatchResult, write, "../output/test2.txt", append=FALSE)
+tempDir=file("../output/test3.txt")
+sink(tempDir)
 writeLines(unlist(lapply(stringMatchResult, paste, collapse=" ")))
+sink()
 #DOLLAR SIGNS preventing all the sentences from writing correctly.
 #stringMatchResultMatrix= rownames(stringMatchResult, 1:length(stringMatchResult))
