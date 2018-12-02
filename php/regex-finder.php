@@ -31,7 +31,7 @@
     }
 
     #$output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/regex-finder.R $query`;
-    $output = `/usr/lib/R/bin/Rscript ../r-scripts/regex-finder.R $year`;
+    $output = `/usr/lib/R/bin/Rscript ../r-scripts/regex-finder.R $query`;
 
     ?>
 
