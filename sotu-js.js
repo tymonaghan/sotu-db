@@ -37,8 +37,8 @@ function openTab(tabName) { //really not sure why i can't get this to work with 
   var i;
   var tablinks = document.getElementsByClassName("tablink");
   var x = document.getElementsByClassName("tab");
-  document.getElementById("searchBox").value = "";
-  document.getElementById("filterSearchBox").value = "";
+  document.getElementById("textSearch").value = "";
+  document.getElementById("byYear").value = "";
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
     tablinks[i].className = tablinks[i].className.replace(" w3-light-blue", "");
