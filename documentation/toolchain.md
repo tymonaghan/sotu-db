@@ -9,6 +9,17 @@
 6. **[W3 CSS](https://www.w3schools.com/w3css/)** style framework
 7. **[Ubuntu 18.04.1 LTS](http://releases.ubuntu.com/18.04.1/)** server OS
 8. **[R](https://www.r-project.org/)** statistical language for text mining and sentiment analysis
+>*R packages:*
+> - tm
+>- ggplot2
+>- dplyr
+>- tidytext
+>- tidyverse
+>- SentimentAnalysis
+>- coreNLP
+>- glue
+>- stringr
+
 9. **[RStudio](https://www.rstudio.com/products/rstudio/download-server/)** server-side IDE for R
 10. **[GitHub](https://github.com/tymonaghan/sotu-db)** version control and cloud storage
 11. **Windows 10 Pro**
