@@ -16,7 +16,7 @@
   <body>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
-      $rawYear = $_GET["searchTerm"];
+      $rawYear = $_GET["searchYear"];
       $rawChunkSize = $_GET["chunkSize"];
       $year = escapeshellcmd($rawYear);
       $chunkSize = escapeshellcmd($rawChunkSize);
