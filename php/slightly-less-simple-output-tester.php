@@ -36,7 +36,9 @@ $output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/simple-summ
 </div>
   <div class = "w3-card w3-white">
   <p>you searched for <?php echo $year ?> </p>
+  <p>raw year: <?php echo $rawYear ?> </p>
   <p>using chunkSize of <?php echo $chunkSize ?> </p>
+  <p>raw chunksize: <?php echo $rawChunkSize ?> </p>
   <br>
   <p><b>results:</b> <?php print_r($output); ?> </p>
 </div> <!-- end w3-card -->
