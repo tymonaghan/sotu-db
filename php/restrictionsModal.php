@@ -1,0 +1,24 @@
+<?php
+echo '    <div id="restrictionsModal" class="w3-modal">
+      <div class="w3-modal-content w3-card">
+        <header class="w3-container w3-yellow">
+          <span onclick="document.getElementById("restrictionsModal").style.display="none"" class="w3-button w3-display-topright">&times;</span>
+          <h2>alpha release: limited functionality</h2>
+        </header>
+        <div class="w3-container">
+          <b>the following limitations are in place:</b>
+          <ul>
+            <li>only a limited set of 10 SOTUs is available</li>
+            <li>you must search by year</li>
+            <li>years available: 1981, 1985, 1989, 1993, 1997, 2001, 2005, 2009, 2013, 2017</li>
+            <li>chunkSize sets the size of chunks of text (in words) for which SOTU-db will return sentiment. Smaller chunkSize means more datapoints, less context.</li>
+            <li>unexpected results may occur when checking multiple chunkSize checkboxes. When none are selected, chunkSize defaults to 65 words</li>
+            <li>scrolling is not functional on results page, and you will see strange formatting, extra text fragments, etc</li>
+            <li>SOTU-db can currently only handle one session at a time. If another use attempts to access SOTU-db while you are using it, you will experience strange behaviors</li>
+            <li>you may encounter other limitations or unexpected behaviors, or the site may go offline entirely without warning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+';
+?>

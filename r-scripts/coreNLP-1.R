@@ -23,15 +23,14 @@ annotationByCoreNLP = annotateFile("../speeches-sample/2013-02-12-obama.md")
 
 plainTextSOTU = readLines("../speeches-sample/2013-02-12-obama.md")
 
-#annotationByCoreNLP = annotateString(textString)
+#annotationByCoreNLP = annotateString(plainTextSOTU)
 
 #### invoke coreNLP pipeline: pos, sentiment ####
 initCoreNLP()
 
 #### debug defaults ####
-textString = "If we work together, we can make some big farts. Together, anything is possible, together."
 userQuery = toString("together")
-chunkSize = 65
+#chunkSize = 65
 #yearSearched=2013
 #singleSOTU <- tidytokens %>% filter(year == yearSearched)
 
@@ -39,9 +38,8 @@ regexUserQuery = paste0("(?i)",userQuery)
 regexUserQuerySentence = paste0("[^.]*",regexUserQuery,"[^.]*\\.")
 
 
-
-coreNLPtokens = getToken(annotationByCoreNLP)
-sentiment = getSentiment(annotationByCoreNLP)
+#coreNLPtokens = getToken(annotationByCoreNLP)
+#sentiment = getSentiment(annotationByCoreNLP)
 
 #### ? ####
 matches = coreNLPtokens %>%
@@ -49,27 +47,26 @@ matches = coreNLPtokens %>%
 
 #### str_count(x,pattern) ####
 #case sensitive:
-str_count(textString, userQuery)
+str_count(plainTextSOTU, userQuery)
 
 #case insensitive:
-str_count(textString, regexUserQuery)
+str_count(plainTextSOTU, regexUserQuery)
 str_count(singleSOTU[1], regexUserQuery)
 
-stringCountResult = str_count(textString, regexUserQuery)
+stringCountResult = str_count(plainTextSOTU, regexUserQuery)
 
 
 #### str_subset(x,pattern) ####
-str_subset(textString, "") 
+str_subset(plainTextSOTU, "") 
 WTF
 
 #### str_locate(x,pattern) ####
-stringLocateResult = str_locate_all(textString, regexUserQuery)
+stringLocateResult = str_locate_all(plainTextSOTU, regexUserQuery)
 
 #### str_extract(x,pattern) ####
-stringExtractResults=str_extract_all(textString,regexUserQuery)
-stringExtractResultSimplified = str_extract_all(textString,regexUserQuery, simplify=TRUE)
+stringExtractResults=str_extract_all(plainTextSOTU,regexUserQuery)
+stringExtractResultSimplified = str_extract_all(plainTextSOTU,regexUserQuery, simplify=TRUE)
 
 #### str_match_all(x,pattern) ####
-stringMatchResult= str_match_all(textString, regexUserQuerySentence)
-
-str_match_all(,regexUserQuerySentence)
+#this creates a list of 185, and the populated cells are the sentences with the users search word in them. 
+stringMatchResult= str_match_all(plainTextSOTU, regexUserQuerySentence)
