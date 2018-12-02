@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SOTU table</title>
+<style>
+table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+
+/* I think this block is changing the color of every other line */
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<!--can use this following block to get it to respond to the other stuff on the screen 
+<p>Click the button to sort the table by year:</p>
+<p><button onclick="sortTable(0)">Sort</button></p> -->
+
+<!-- the table itself, with onclick fields set 
+0 sorts by year
+1 by POTUS
+2 by WC
+-->
+<table id="SOTUtable">
+  <tr>
+    <th onclick="sortTable(0)">Year</th>
+    <th onclick="sortTable(1)">President</th>
+    <th onclick="sortTable(2)">Word Count</th>
+  </tr>
+  <tr>
+    <td><div class="tooltip">1790<span class="tooltiptext">This was the first ever SOTU</span></div></td>
+    <td>Washington</td>
+    <td>1,089</td>
+  </tr>
+  <tr>
+    <td>1865</td>
+    <td>Johnson, Andrew</td>
+    <td>9,256</td>
+  </tr>
+  <tr>
+    <td>1908</td>
+    <td>Roosevelt, Theodore</td>
+    <td>19,506</td>
+  </tr>
+  <tr>
+    <td>1939</td>
+    <td>Roosevelt, Franklin</td>
+    <td>3,785</td>
+  </tr>
+  <tr>
+    <td>1965</td>
+    <td>Johnson, Lyndon</td>
+    <td>4,442</td>
+  </tr>
+  <tr>
+    <td>1987</td>
+    <td>Reagan</td>
+    <td>3,811</td>
+  </tr>
+  <tr>
+    <td>2016</td>
+    <td>Obama</td>
+    <td>6,067</td>
+  </tr>
+</table>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, nx, ny, shouldSwitch, dir, switchcount=0;
+  table = document.getElementById("SOTUtable");
+  switching = true;
+  // set the sorting direction to ascending:
+  dir = "asc";
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+        x = rows[i].getElementsByTagName("TD")[n];
+        y = rows[i + 1].getElementsByTagName("TD")[n];
+        
+      if (dir == "asc" && n!=2) {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        shouldSwitch= true;
+        break;
+        }
+      } else if (dir == "desc" && n!=2) {
+         if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            //if so, mark as a switch and break the loop:
+         shouldSwitch = true;
+         break;
+        } //end equality comparison
+      } else if (dir == "asc") {
+          if (Number.parseInt(x.innerHTML) > Number.parseInt(y.innerHTML)) {
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+          if (Number.parseInt(x.innerHTML) < Number.parseInt(y.innerHTML)) {
+          shouldSwitch= true;
+          break;
+        }
+      }
+}//end for loop, if (shouldSwitch) should follow this line.
+    
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;      
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+        }
+      }
+  } //end while switching
+} //end functions sortTable
+
+function loadInfo(year) {
+
+}
+</script>
+
+</body>
+</html>

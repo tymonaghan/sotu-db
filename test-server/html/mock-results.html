@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://github.com/tymonaghan/sotu-db/raw/master/images/favicon.png">
+    <link rel="stylesheet" href="/style/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SOTU-db</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      body {
+        background: url("./img/Obama_waves_State_of_the_Union_2011.jpg") no-repeat center fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="w3-top">
+      <!-- top menu bar -->
+      <?php include 'topnav.php';?>
+    </div>
+
+    <div class="w3-cell-row">
+      <div class="w3-container w3-cell w3-left" style="width:150px">
+      </div>
+      <div class="w3-container w3-cell w3-half">
+        <!-- big content box -->
+        <br><br>
+
+        <div class="w3-card" id="#card1">
+          <div class="w3-bar w3-light-blue w3-padding">
+            <h1>search results</h1>
+          </div> <!-- end title bar for card -->
+          <div class="w3-cell-row w3-white">
+
+            <div class="w3-cell w3-left w3-half w3-white w3-padding">
+              <h2>you searched for: "obama"</h2>
+              <h3><b>entity</b></h3>
+              <p>Barack Obama, 44th POTUS</p>
+              <h3><b>timeframe</b></h3>
+              <p>POTUS: 2001-2009 (elected 2008, 2012)</p>
+              <h3><b>SOTUs</b></h3>
+              <ul>
+                <li><a href="#">2009*</a></li>
+                <li><a href="#">2010</a></li>
+                <li><a href="#">2011 (shown in viewer)</a></li>
+                <li><a href="#">2012</a></li>
+                <li><a href="#">2013</a></li>
+                <li><a href="#">2014</a></li>
+                <li><a href="#">2015</a></li>
+                <li><a href="#">2016</a></li>
+              </ul>
+            </div>
+
+            <div><br>
+              <img class="w3-cell w3-padding" src="https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg" style="max-height:400px">
+              <!-- obama photo, right of card1 -->
+            </div>
+          </div>
+        </div> <!-- end card -->
+        <br><br>
+        <div class="w3-card w3-white">
+          <div class="w3-bar w3-light-blue w3-padding">
+            <h1>selected terms</h1>
+          </div> <!-- end title bar for card -->
+          <div>
+            <a href="#"><img src="./img/sample-american-contexts.PNG"></a>
+          </div>
+          <br>
+          <div>
+            <a href="#"><img src="./img/lexicomparison.png"></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="w3-container w3-cell w3-third w3-right"><br><br>
+        <div class="w3-card w3-bar-block w3-white" style="min-height:400px">
+          <div class="w3-bar w3-light-blue w3-padding">
+            <h1>reader view</h1>
+          </div>
+          <div>
+            <iframe class="w3-white w3-block" src="./sample-texts/2012-01-24-obama.md" style="min-height:750px"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
