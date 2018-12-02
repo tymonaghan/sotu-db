@@ -6,9 +6,9 @@
   </header>
   <div class="w3-bar w3-light-gray">
     <!--tab bar -->
-    <button class="w3-bar-item w3-button w3-border-right w3-border-left w3-border-top tablink w3-light-blue" onclick="openTab(" search")" id="searchbutton">By Year</button>
-    <button class="w3-bar-item w3-button w3-border-right w3-border-top tablink" onclick="openTab(" filter")" id="filterbutton">Sentiment by Address</button>
-    <button class="w3-bar-item w3-button w3-border-top w3-border-right tablink" onclick="openTab(" fileviewer")" id="fileviewerbutton">File viewer</button>
+    <button class="w3-bar-item w3-button w3-border-right w3-border-left w3-border-top tablink w3-light-blue" onclick="openTab('search')" id="searchbutton">By Year</button>
+    <button class="w3-bar-item w3-button w3-border-right w3-border-top tablink" onclick="openTab('filter')" id="filterbutton">Filter list view</button>
+    <button class="w3-bar-item w3-button w3-border-top w3-border-right tablink" onclick="openTab('fileviewer')" id="fileviewerbutton">File viewer</button>
   </div> <!-- end w3-bar tab-bar -->
   <div id="search" class="tab w3-container w3-padding">
     <form method="GET" action="php\coreNLP-1.php">
@@ -57,9 +57,9 @@
       <div class="w3-cell">
         <p>Select a file to view:</p>
       </div>
-      <div class="w3=cell"> <button onclick="loadSOTUforViewer(" 1790")">Washington 1790</button></div>
-      <div class="w3-cell"><button onclick="loadSOTUforViewer(" 1797")">Adams 1797</button></div>
-      <div class="w3-cell"><button onclick="loadSOTUforViewer(" 2012")">Obama 2012</button></div>
+      <div class="w3=cell"> <button onclick="loadSOTUforViewer('1790')">Washington 1790</button></div>
+      <div class="w3-cell"><button onclick="loadSOTUforViewer('1797')">Adams 1797</button></div>
+      <div class="w3-cell"><button onclick="loadSOTUforViewer('2012')">Obama 2012</button></div>
     </div>
     <iframe class="w3-mobile w3-block" style="min-height:500px" id="fileViewerFrame">
       <p>your browser does not support this view.</p>
