@@ -1,5 +1,7 @@
 ## SOTU-db Contribution Guide
 
+*Here to contribute? Put your work in /contributors/YOURGITHUBNAME and submit a pull request!*
+
 #### Contributing
 ##### Code
 Please check the issues board for "help wanted" issues. Pull requests addressing "help wanted" issues are welcome. For other issues, contact me to discuss. Please be aware, as this is an academic project, pull requests for general code and feature improvements or issues other than "help wanted" usually won't be considered.
