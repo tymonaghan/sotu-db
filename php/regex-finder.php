@@ -44,11 +44,11 @@
     <p>using chunkSize of <?php echo $chunkSize ?> </p>
     <br>
     <p><b>results:</b></p>
-    <p>here is each instance of your query in Obama's 2013 SOTU:</p>
-    <h4>test22</h2>
+    <p>here is each instance of your query in Bush-41's 1989 SOTU:</p>
+    <h4>number of occurrences:</h4>
+    <iframe src="../output/test11.txt" style="width:100%"></iframe>
+    <h4>sentences:</h2>
     <iframe src="../output/test22.txt" style="height:300px;width:100%"></iframe>
-    <h4>test11</h4>
-    <iframe src="../output/test11.txt" style="height:300px;width:100%"></iframe>
   </div> <!-- end w3-card -->
   </div> <!-- end w3-content div -->
 

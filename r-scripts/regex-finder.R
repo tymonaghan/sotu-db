@@ -8,7 +8,7 @@ if (length(args)==0) {
 }
 
 userQuery = toString(args[1])
-plainTextSOTU = readLines("../speeches-sample/2013-02-12-obama.md")
+plainTextSOTU = readLines("../speeches-sample/1989-02-09-bush.md")
 plainTextSOTU = gsub("\\$", "dollars", plainTextSOTU)
 
 library(stringr)
