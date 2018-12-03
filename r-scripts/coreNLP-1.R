@@ -25,7 +25,7 @@ library(coreNLP)
 load("../r-env/tidytokens-sample.RData")
 
 #### invoke coreNLP pipeline: pos, sentiment ####
-initCoreNLP()
+#initCoreNLP()
 
 #### debug defaults ####
 #userQuery = toString("together")
@@ -71,12 +71,13 @@ stringExtractResultSimplified = str_extract_all(plainTextSOTU,regexUserQuery, si
 stringMatchResult= str_match_all(plainTextSOTU, regexUserQuerySentence)
 stringMatchResult = stringMatchResult[lapply(stringMatchResult,length)>0]
 
-for (index in length(stringMatchResult)){
-  lapply(index, write, "../output/test.txt", append=TRUE)
-
-}
+#for (index in length(stringMatchResult)){
+ # lapply(index, write, "../output/test.txt", append=FALSE)
+#}
 
 lapply(stringMatchResult, write, "../output/test2.txt", append=FALSE)
+
+#### sink to test3.txt
 tempDir=file("../output/test3.txt")
 sink(tempDir)
 writeLines(unlist(lapply(stringMatchResult, paste, collapse=" ")))

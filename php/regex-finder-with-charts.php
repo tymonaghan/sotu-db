@@ -9,6 +9,8 @@
     <title>SOTU-db</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style>
+    html{
+    }
       body {
         background: url("../images/Obama_waves_State_of_the_Union_2011-lightened.jpg") no-repeat center;
         background-size: cover;
@@ -33,11 +35,12 @@
     return $data;
     }
 
-    $output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/regex-finder.R $query`;
-    #$output = `/usr/lib/R/bin/Rscript ../r-scripts/regex-finder.R $query`;
+    #$output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/regex-finder-with-charts.R $query`;
+    $output = `/usr/lib/R/bin/Rscript ../r-scripts/regex-finder-with-charts.R $query`;
 
-    $matchCount = file_get_contents("../output/test11.txt");
-    $matchedSentences = file("../output/test22.txt");
+    $matchCount = file_get_contents("../output/matchCount.txt");
+    $matchedSentences = file("../output/matchSentences.txt");
+    $matchedSentencesWithSentiment = file("../output/sentimentDirections.txt");
     ?>
 
     <div class="w3-top">
@@ -59,10 +62,19 @@
       </div>
       <div class = "w3-container">
         <h3>number of times your search query appears: <b><?php echo $matchCount; ?> </b></h3>
+        <h3>sentiment trajectory: <?php
+        if($matchCount > 1){
+        echo "<img src='../output/sentimentMatchChart.png'/>";
+      }
+        ?>
+      </h3>
+
         <h3><b>sentences:</b></h3>
         <?php
-        foreach($matchedSentences as $line){
-          echo "<div class = 'w3-border w3-padding w3-hover-pale-blue'>" . $line . '</div><br>';
+        foreach($matchedSentencesWithSentiment as $line){
+          echo "<div class='w3-cell-row w3-border w3-hover-pale-blue'>";
+          echo "<div class = 'w3-cell-middle w3-twothird w3-padding'>" . $line . '</div>';
+          echo "</div><br>";
         }
         #echo $matchedSentences;
         ?>
