@@ -35,8 +35,8 @@
     return $data;
     }
 
-    $output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/regex-finder-with-charts.R $query`;
-    #$output = `/usr/lib/R/bin/Rscript ../r-scripts/regex-finder-with-charts.R $query`;
+    #$output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/regex-finder-with-charts.R $query`;
+    $output = `/usr/lib/R/bin/Rscript ../r-scripts/regex-finder-with-charts.R $query`;
 
     $matchCount = file_get_contents("../output/matchCount.txt");
     $matchedSentences = file("../output/matchSentences.txt");
