@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="https://github.com/tymonaghan/sotu-db/raw/master/images/favicon.png">
-    <link rel="stylesheet" href="/style/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>SOTU-db</title>
@@ -55,11 +55,11 @@
         <h2>your query:
           <b><?php echo $query ?></b>
         </h2>
-        <h2>your corpus: <b>Bush-41's 1989 SOTU:</b></h2>
+        <h2>your corpus: <b>Bush-41's 1989 SOTU</b></h2>
       </div>
       <div class = "w3-container">
         <h3>number of times your search query appears: <b><?php echo $matchCount; ?> </b></h3>
-        <h3>sentences:</h3>
+        <h3><b>sentences:</b></h3>
         <?php
         foreach($matchedSentences as $line){
           echo "<div class = 'w3-border w3-padding w3-hover-pale-blue'>" . $line . '</div><br>';
