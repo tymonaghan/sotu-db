@@ -57,7 +57,7 @@ writeLines(paste(stringMatchResult[i],
   "GI: ",str_replace_all(sentimentFrame$SentimentGI[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown)),"<br>",
   "HE: ",str_replace_all(sentimentFrame$SentimentHE[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown)),"<br>",
   "LM: ",str_replace_all(sentimentFrame$SentimentLM[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown)),"<br>",
-  "QDAP: ",str_replace_all(sentimentFrame$SentimentQDAP[i],toString("positive"),toString("<i class='fa fa-thumbs-up' style='color:green'></i>"))))
+  "QDAP: ",str_replace_all(sentimentFrame$SentimentQDAP[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown))))
 }
 sink()
 
