@@ -1,6 +1,6 @@
 #### handle input arguments ####
 args = commandArgs(trailingOnly=TRUE)
-# test if there is at least one argument: if not, return an error
+# sentimentFrame if there is at least one argument: if not, return an error
 if (length(args)==0) {
   stop("At least one argument must be supplied (input file).n", call.=FALSE)
 } else if (length(args)==1) {
@@ -8,7 +8,7 @@ if (length(args)==0) {
 }
 
 userQuery = toString(args[1])
-#userQuery= toString("taxes")
+#userQuery= toString("together")
 
 #### load packages ####
 library(stringr)
@@ -25,21 +25,42 @@ regexUserQuerySentence = paste0("[^.]*",regexUserQuery,"[^.]*\\.")
 #regexUserQuerySentence
 stringCountResult = str_count(tokens1989, regexUserQuery)
 stringCountSum = sum(stringCountResult)
-tempDir=file("../output/test11.txt")
+tempDir=file("../output/matchCount.txt")
 sink(tempDir)
 writeLines(toString(stringCountSum))
 sink()
 
-#### sentences to test22.txt ####
+#### sentences to sentimentFrame22.txt ####
 stringMatchResult= str_match_all(clearText1989, regexUserQuerySentence)
 stringMatchResult = stringMatchResult[lapply(stringMatchResult,length)>0]
-tempDir=file("../output/test22.txt")
+tempDir=file("../output/matchSentences.txt")
 sink(tempDir)
 writeLines(unlist(lapply(stringMatchResult, paste, collapse=" ")))
 sink()
 
 #### sentimentAnalysis ####
 sentiment = analyzeSentiment(unlist(stringMatchResult))
+
+sentimentDirection = convertToDirection(sentiment)
+sentimentDirection$SentimentGI[1]
+sentimentFrame = sentimentDirection
+#sentimentFrame$sentence = stringMatchResult
+tempDir=file("../output/sentimentDirections.txt")
+sink(tempDir)
+thumbsUp = toString("<i class='fa fa-thumbs-up' style='color:green'></i>")
+neutralIcon = toString("<i class='fa fa-star-half-o' style='color:orange'></i>")
+thumbsDown = toString("<i class='fa fa-thumbs-o-down' style='color:red'></i>")
+
+for (i in 1:length(stringMatchResult)){
+writeLines(paste(stringMatchResult[i],
+                 "</div><div class='w3-rest w3-cell-middle w3-right w3-padding w3-hover-pale-blue'>",
+  "GI: ",str_replace_all(sentimentFrame$SentimentGI[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown)),"<br>",
+  "HE: ",str_replace_all(sentimentFrame$SentimentHE[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown)),"<br>",
+  "LM: ",str_replace_all(sentimentFrame$SentimentLM[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown)),"<br>",
+  "QDAP: ",str_replace_all(sentimentFrame$SentimentQDAP[i],toString("positive"),toString("<i class='fa fa-thumbs-up' style='color:green'></i>"))))
+}
+sink()
+
 png("../output/sentimentMatchChart.png", width=600, height=300)
-plotSentiment(sentiment)
+plotSentiment(sentimentFrame)
 dev.off()
