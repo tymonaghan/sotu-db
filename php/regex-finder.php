@@ -1,4 +1,5 @@
 <html>
+
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="https://github.com/tymonaghan/sotu-db/raw/master/images/favicon.png">
@@ -13,6 +14,7 @@
       }
     </style>
   </head>
+
   <body>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -33,24 +35,37 @@
     $output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/regex-finder.R $query`;
     #$output = `/usr/lib/R/bin/Rscript ../r-scripts/regex-finder.R $query`;
 
+    $matchCount = file_get_contents("../output/test11.txt");
+    $matchedSentences = file("../output/test22.txt");
     ?>
 
     <div class="w3-top">
       <?php include 'topnav.php';?>
     </div> <!-- end w3-top -->
-  <div class="w3-content w3-container">
-    <div class = "w3-card w3-white">
-    <p>your query: <?php echo $query ?> </p>
-    <p>using chunkSize of <?php echo $chunkSize ?> </p>
-    <br>
-    <p><b>results:</b></p>
-    <p>here is each instance of your query in Bush-41's 1989 SOTU:</p>
-    <h4>number of occurrences:</h4>
-    <iframe src="../output/test11.txt" style="width:100%"></iframe>
-    <h4>sentences:</h2>
-    <iframe src="../output/test22.txt" style="height:300px;width:100%"></iframe>
-  </div> <!-- end w3-card -->
-  </div> <!-- end w3-content div -->
+    <div class="w3-content w3-container">
+      <br><br>
+      <div class="w3-card w3-white">
+        <header class="w3-container w3-light-gray">
+          <div class="w3-text">
+            <h3>Results</h3>
+          </div>
+        </header>
+        <div class = "w3-container w3-padding">
+        <h2>your query:
+          <b><?php echo $query ?></b>
+        </h2>
+        <h2>your corpus: <b>Bush-41's 1989 SOTU:</b></h2>
+        <h3>number of times your search query appears: <b><?php echo $matchCount; ?> </b></h3>
+        <h3>sentences:</h3>
+        <?php
+        foreach($matchedSentences as $line){
+          echo "<div class = 'w3-border w3-padding w3-light-purple'>" . $line . '</div><br>';
+        }
+        #echo $matchedSentences;
+        ?>
+      </div>
+      </div> <!-- end w3-card -->
+    </div> <!-- end w3-content div -->
+  </body>
 
-    </body>
-  </html>
+</html>

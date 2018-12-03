@@ -9,13 +9,13 @@ if (length(args)==0) {
 
 userQuery = toString(args[1])
 
-#### set REGEX versions of query ####
-plainTextSOTU = readLines("../speeches-sample/1989-02-09-bush.md")
-plainTextSOTU = gsub("\\$", "dollars", plainTextSOTU)
 
 #### load packages ####
 library(stringr)
 library(glue)
+load("../r-env/tidytokens-sample.RData")
+
+#### set REGEX versions of query ####
 
 regexUserQuery = paste0("(?i)",userQuery)
 regexUserQuerySentence = paste0("[^.]*",regexUserQuery,"[^.]*\\.")
@@ -25,12 +25,12 @@ regexUserQuerySentence = paste0("[^.]*",regexUserQuery,"[^.]*\\.")
 #regexUserQuerySentence
 
 #### count ####
-stringCountResult = str_count(plainTextSOTU, regexUserQuery)
+stringCountResult = str_count(clearText1989, regexUserQuery)
 stringCountSum = sum(stringCountResult)
-lapply(glue("your term appears this many times: ",stringCountSum), write, "../output/test11.txt", append=FALSE)
+lapply(stringCountSum, write, "../output/test11.txt", append=FALSE)
 
 #### sentences to test22.txt ####
-stringMatchResult= str_match_all(plainTextSOTU, regexUserQuerySentence)
+stringMatchResult= str_match_all(clearText1989, regexUserQuerySentence)
 stringMatchResult = stringMatchResult[lapply(stringMatchResult,length)>0]
 tempDir=file("../output/test22.txt")
 sink(tempDir)
