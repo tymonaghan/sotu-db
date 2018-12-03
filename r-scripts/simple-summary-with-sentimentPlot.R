@@ -12,30 +12,23 @@ if (length(args)==0) {
 
 yearSearched = as.integer(args[1])
 chunkSize = as.integer(args[2])
-#yearSearched = 2013
-#chunkSize=69
 positive = 0
 negative = 0
+#### defaults ####
+#yearSearched = 2013
+#chunkSize=69
 
-#### load packages ####
+#### load packages and environment ####
 library(tidyverse)
 library(tidytext)
 library(stringr)
 library(tm)
 library(dplyr)
 library(ggplot2)
-
-#load("C:/Users/tnmon/git/sotu-db/r-env/tidytokens-sample.RData")
-#load("/var/www/sotu-db.cs.luc.edu/html/r-env/tidytokens-sample.RData")
 load("../r-env/tidytokens-sample.RData")
-#setwd("C:/Users/tnmon/git/sotu-db/speeches-sample")
-#setwd("/var/www/sotu-db.cs.luc.edu/html/speeches-sample")
-#setwd("../speeches-sample")
-
 
 #### create singleSOTU from yearSearched ####
 singleSOTU <- tidytokens %>% filter(year == yearSearched)
-
 
 #### find sent-scores for afinn, bing, nrc ####
 afinn = singleSOTU %>%
@@ -54,7 +47,6 @@ bing_and_nrc = bind_rows(singleSOTU %>% inner_join(get_sentiments("bing")) %>%
   mutate(sentiment = positive - negative)
 
 #### bind and visualize ####
-
 #output to png
 png("../output/plot.png")
 
