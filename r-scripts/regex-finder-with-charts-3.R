@@ -35,6 +35,9 @@ sink()
 
 stringMatchResult= str_match_all(clearText1989, regexUserQuerySentence) %>% compact
 
+tokenRows = data_frame("sentenceText" = stringMatchResult) %>%
+  mutate("sentenceNumber" = )
+
 
 #this returns the whole rows from tokens1989, so $sentence is one of the cols
 filteredTokenRows = data_frame("sentenceText" = character(stringCountSum), stringsAsFactors=FALSE)
@@ -44,7 +47,7 @@ filteredTokenRows[ ,1] =
   tokens1989[which(tokens1989$token == str_match_all(tokens1989$token,regexUserQuery)), ]
 
 for (i in stringCountSum){
-  filteredTokenRows$sentenceText[i] = as.numeric(i)
+  tokenRows$sentenceNumber[i] = as.numeric(i)
 }
 
 tokens1989[which(tokens1989$token == str_match_all(tokens1989$token,regexUserQuery)), ]

@@ -43,7 +43,7 @@
     return $data;
     }
 
-    $output = `$RScript ../r-scripts/regex-finder-with-charts.R $query`;
+    $output = `$RScript ../r-scripts/regex-finder.R $query`;
 
 
     $matchCount = file_get_contents("../output/matchCount.txt");
@@ -81,9 +81,7 @@
         <h3><b>sentences:</b></h3>
         <?php
         foreach ($matchedSentencesWithSentiment as $line) {
-            echo "<div class='w3-cell-row w3-border w3-hover-pale-blue'>";
-            echo "<div class = 'w3-cell-middle w3-twothird w3-padding'>" . $line . '</div>';
-            echo "</div><br>";
+            echo $line;
         }
         #echo $matchedSentences;
         ?>
