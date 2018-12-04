@@ -9,5 +9,6 @@ echo '<div class="w3-bar w3-purple" style="padding-left:10px">
 <div id="mobilemenu" class="w3-bar-block w3-purple w3-hide w3-hide-large w3-hide-medium">
   <a href="https://github.com/tymonaghan/sotu-db" class="w3-bar-item w3-button w3-right">GitHub Repository <i class="fa fa-external-link"></i></a>
   <a href="documentation.html" class="w3-bar-item w3-button w3-right">Documentation</a>
-  <a href="credits.html" class="w3-bar-item w3-button w3-right">Credits</a>';
+  <a href="credits.html" class="w3-bar-item w3-button w3-right">Credits</a>
+  </div>';
  ?>
