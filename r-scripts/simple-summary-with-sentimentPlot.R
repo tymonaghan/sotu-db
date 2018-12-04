@@ -48,7 +48,7 @@ bing_and_nrc = bind_rows(singleSOTU %>% inner_join(get_sentiments("bing")) %>%
 
 #### bind and visualize ####
 #output to png
-png("../output/plot.png")
+png("../output/plot.png",width=900,height=550)
 
 bind_rows(afinn, bing_and_nrc) %>%
   ggplot(aes(index, sentiment, fill = method)) +

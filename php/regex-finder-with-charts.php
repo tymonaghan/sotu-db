@@ -44,11 +44,11 @@
     $matchedSentencesWithSentiment = file("../output/sentimentDirections.txt");
     ?>
 
-    <div class="w3-top">
+    <div class="w3-top" id="topnav">
       <?php include 'topnav.php';?>
     </div> <!-- end w3-top -->
-    <div class="w3-content w3-container">
-      <br><br><br>
+    <div class="w3-content w3-container" id="mainContent">
+      <br><br><br><!-- the calculateYoffsets thing isn't working here (probably bc using w3-content) so just <br>x3 for now -->
       <div class="w3-card w3-white">
         <header class="w3-container w3-purple">
           <div class="w3-text">
