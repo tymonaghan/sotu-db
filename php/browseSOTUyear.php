@@ -16,8 +16,8 @@
   </head>
 
   <body>
+    
   <?php
-
 //this block checks for windows or linux and sets $RScript path accordingly
   $RScript = '/usr/lib/R/bin/Rscript';
   if (strcasecmp(substr(PHP_OS_FAMILY, 0, 3), 'WIN') == 0) {
@@ -32,8 +32,8 @@
         $chunkSize = escapeshellcmd($rawChunkSize);
     } //if the form is filled out, clean the "searchTerm" and store as year
 
-
 $output = `$RScript ../r-scripts/simple-summary-with-sentimentPlot.R $year $chunkSize`;
+
 ?>
 
     <div class="w3-top">

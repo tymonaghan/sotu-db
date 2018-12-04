@@ -45,6 +45,7 @@
 
     $output = `$RScript ../r-scripts/regex-finder-with-charts.R $query`;
 
+
     $matchCount = file_get_contents("../output/matchCount.txt");
     $matchedSentences = file("../output/matchSentences.txt");
     $matchedSentencesWithSentiment = file("../output/sentimentDirections.txt");
@@ -73,6 +74,7 @@
         if ($matchCount > 1) {
             echo "<img src='../output/sentimentMatchChart.png' alt='chart of each occurence of your query by occurrence'/>";
         }
+
         ?>
       </h3>
 
