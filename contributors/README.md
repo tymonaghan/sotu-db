@@ -2,7 +2,7 @@
 
 *Here to contribute? Put your work in /contributors/YOURGITHUBNAME and submit a pull request!*
 
-#### Contributing
+### Contributing
 ##### Code
 Please check the issues board for "help wanted" issues. Pull requests addressing "help wanted" issues are welcome. For other issues, contact me to discuss. Please be aware, as this is an academic project, pull requests for general code and feature improvements or issues other than "help wanted" usually won't be considered.
 
@@ -15,6 +15,9 @@ Currently seeking writers and scholars to contribute pieces discussing:
 - the effectiveness of the sentiment analysis tools used in this software
 
 please contact tmonaghan@luc.edu if you would like to contribute in this way.
+
+#### Credit
+Please complete the [contributors' credit form](https://goo.gl/forms/3pY0NMZnR5mPirAk2) if you make a contribution so that your work can be credited properly.
 
 ##### Setup
 1. [Install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) to your computer
