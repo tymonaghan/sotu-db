@@ -1,5 +1,5 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="https://github.com/tymonaghan/sotu-db/raw/master/images/favicon.png">
@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style>
     html{
+
     }
       body {
         background: url("../images/Obama_waves_State_of_the_Union_2011-lightened.jpg") no-repeat center;
@@ -35,8 +36,8 @@
     return $data;
     }
 
-    #$output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/regex-finder-with-charts.R $query`;
-    $output = `/usr/lib/R/bin/Rscript ../r-scripts/regex-finder-with-charts.R $query`;
+    $output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/regex-finder-with-charts.R $query`;
+    #$output = `/usr/lib/R/bin/Rscript ../r-scripts/regex-finder-with-charts.R $query`;
 
     $matchCount = file_get_contents("../output/matchCount.txt");
     $matchedSentences = file("../output/matchSentences.txt");
@@ -47,7 +48,7 @@
       <?php include 'topnav.php';?>
     </div> <!-- end w3-top -->
     <div class="w3-content w3-container">
-      <br><br>
+      <br><br><br>
       <div class="w3-card w3-white">
         <header class="w3-container w3-purple">
           <div class="w3-text">
@@ -64,7 +65,7 @@
         <h3>number of times your search query appears: <b><?php echo $matchCount; ?> </b></h3>
         <h3>sentiment trajectory: <?php
         if($matchCount > 1){
-        echo "<img src='../output/sentimentMatchChart.png'/>";
+        echo "<img src='../output/sentimentMatchChart.png' alt='chart of each occurence of your query by occurrence'/>";
       }
         ?>
       </h3>
@@ -82,5 +83,4 @@
       </div> <!-- end w3-card -->
     </div> <!-- end w3-content div -->
   </body>
-
 </html>

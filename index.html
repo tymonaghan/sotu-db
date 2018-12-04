@@ -23,35 +23,45 @@
     <script src="sotu-js.js"></script>
   </head>
 
-  <body>
-    <div class="w3-top">
+  <body onload="calculateYoffsets()">
+    <div class="w3-top" id="topnav">
       <!-- top menu bar -->
       <?php include './php/topnav.php';?>
     </div>
-    <div class="w3-bar w3-pale-yellow w3-center w3-border" onclick="document.getElementById('restrictionsModal').style.display='block'">
-      <p>SOTU-db is currently in a limited alpha state. <span class="w3-button w3-border w3-border-orange w3-round-xlarge">Click here</span> to learn about the restrictions in place.</p>
+    <div class="w3-bar w3-pale-yellow w3-center w3-border" id="restrictionsBanner" style="position:fixed; top:50px;">
+      <p>SOTU-db is currently in a limited alpha state.
+        <span class="w3-button w3-border w3-border-orange w3-round-xlarge" onclick="document.getElementById('restrictionsModal').style.display='block'">Click here</span> to learn about the restrictions in place.</p>
+      <span onclick="document.getElementById('restrictionsBanner').style.display='none';calculateYoffsets()" class="w3-button w3-display-right"><i class="fa fa-chevron-up"></i></span>
+      <!-- line above should be changed to use the toggleRestrictionsBanner js function but it's not finding it right now. for now, x just disappears the banner. -->
     </div>
 
-    <!-- <?php include './php/restrictionsModal.php'; ?> -->
     <div w3-include-html="html/restrictionsModal.html"></div>
 
-
-    <div class="w3-cell-row w3-margin w3-padding">
+    <div class="w3-cell-row w3-margin w3-padding" id="mainContent" style="position:fixed;top:100px;">
       <div class="w3-cell w3-twothirds w3-padding w3-mobile">
         <div w3-include-html="html/searchBox.html"></div>
       </div>
+
       <div class="w3-cell w3-mobile w3-rest w3-padding">
         <a href="https://twitter.com/SOTU_db?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SOTU_db</a>
         <a class="twitter-timeline" href="https://twitter.com/SOTU_db/lists/presidential-libraries?ref_src=twsrc%5Etfw">A Twitter List by SOTU_db</a>
       </div>
     </div>
-
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
     <script>
       includeHTML();
     </script>
-
     <script type="text/javascript" id="cookiebanner" src="https://cdnjs.cloudflare.com/ajax/libs/cookie-banner/1.2.2/cookiebanner.min.js"></script>
   </body>
+  <script>
+    function calculateYoffsets() {
+      var topnavOffset = document.getElementById('topnav').offsetHeight; //set to height of topnav bar
+      var topnavPlusBannerOffset = document.getElementById('restrictionsBanner').offsetHeight + topnavOffset; //set to height of topnav plus restrictions banner
+      document.getElementById('restrictionsBanner').style.top = topnavOffset + "px";
+      document.getElementById('mainContent').style.top = topnavPlusBannerOffset + "px";
+    }
+    // i really don't know why it's not taking this function from sotu-js.js... it only works if I leave it here.
+  </script>
 
 </html>
