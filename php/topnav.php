@@ -11,3 +11,4 @@ echo '<div class="w3-bar w3-purple w3-cell-row">
   <a href="../html/documentation.html" class="w3-bar-item w3-button w3-right">Documentation</a>
   <a href="../html/credits.html" class="w3-bar-item w3-button w3-right">Credits</a>
   </div>';
+
