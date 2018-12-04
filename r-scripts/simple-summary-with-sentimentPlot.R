@@ -55,7 +55,7 @@ bind_rows(afinn, bing_and_nrc) %>%
   geom_col(show.legend = FALSE) +
   facet_wrap(~method, ncol = 1, scales = "free_y")+
   ggtitle(paste("Comparison of sentiment with 3 lexicons for", yearSearched, "\nChunk size:",chunkSize, "words"))
-dev.off()
+#dev.off()
 
 #### write SOTU to stdout ####
 writeLines(as.character(singleSOTU[[1]]))

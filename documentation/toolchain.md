@@ -2,6 +2,11 @@
 *The tools that made SOTU-db happen*
 
 1. **[Atom](https://atom.io/)** text editor
+<br> **[line-count](https://atom.io/packages/line-count)** Atom package
+<br> **[atom-beautify](https://atom.io/packages/atom-beautify)** Atom package
+<br> **[php-cs-fixer](https://atom.io/packages/php-cs-fixer)** Atom package
+<br> **[packagename](packURL)** Atom package
+
 2. **[Apache](https://httpd.apache.org/)** server
 3. **[Chrome](https://www.google.com/chrome/)** browser, developer tools
 4. **[Edge](https://www.microsoft.com/en-us/windows/microsoft-edge)** browser, developer tools
