@@ -1,47 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="https://github.com/tymonaghan/sotu-db/raw/master/images/favicon.png">
-    <link rel="stylesheet" href="./style/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Documentation: SOTU-db</title>
+    <title>Credits: SOTU-db</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../sotu-js.js"></script>
   </head>
 
   <body>
     <div class="w3-top">
-      <?php include 'topnav.php';?>
+      <?php include '../php/topnav.php';?>
     </div> <!-- end top -->
-
-    <div class="w3-row-padding">
-      <div class="w3-cell w3-quarter">
-        <br>
-      </div>
-      <div class="w3-cell w3-light-gray w3-mobile w3-padding">
-        <br><br>
-        <h1>SOTU-db project team</h1>
-        <div class="w3-card-4 w3-third">
-          <img src="https://github.com/tymonaghan/sotu-db/raw/master/images/biopic2.png" class="w3-image" alt="headshot photo of tyler monaghan">
-          <div class="w3-container">
-            <h2>Tyler Monaghan</h1>
-              <ul>
-                <li>project lead</li>
-              </ul>
-              <p>visit my digital portfolio at <a href="https://portfolio.tylermonaghan.com">portfolio.tylermonaghan.com</a>
-          </div>
-        </div>
-      </div>
+    <div class="w3-content w3-light-gray w3-mobile w3-padding-large">
+      <br><br><br>
+      <h1>SOTU-db project team</h1>
+      <div w3-include-html="../contributors/bioBoxes/tylermonaghan.html"></div>
+      <br>
+      <h3><b>other contributors</b></h3>
+      <ul>
+        <li>Sam Stahl, HTML/CSS</li>
+        <li>Oliver Sneyd, PHP</li>
+        <li>Taylor Brown, Prose</li>
+        <li>Rebecca Parker, CSS/REGEX
+      </ul>
     </div>
     <script>
-      function showDropMenu() {
-        var x = document.getElementById("mobilemenu");
-        if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-        } else {
-          x.className = x.className.replace(" w3-show", "");
-        }
-      } //end myFunction
+      includeHTML();
     </script>
   </body>
 
