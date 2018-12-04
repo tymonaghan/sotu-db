@@ -33,7 +33,7 @@ function loadSOTUforViewer(year) {
   }
 } //end loadSOTUforViewer
 
-function openTab(tabName) { //really not sure why i can't get this to work with the w3-hide/w3-show arrangement like above, but style=display works for now.
+function openTab(tabName) { //really not sure why i can't get this to work with the w3-hide/w3-show arrangement like showDropMenu, but style=display works for now.
   var i;
   var tablinks = document.getElementsByClassName("tablink");
   var x = document.getElementsByClassName("tab");
@@ -60,8 +60,12 @@ function includeHTML() {
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          if (this.status == 200) {
+            elmnt.innerHTML = this.responseText;
+          }
+          if (this.status == 404) {
+            elmnt.innerHTML = "Page not found.";
+          }
           /*remove the attribute, and call this function once more:*/
           elmnt.removeAttribute("w3-include-html");
           includeHTML();
@@ -75,6 +79,10 @@ function includeHTML() {
   }
 }
 
-function closeModal(){
-  document.getElementById(" restrictionsModal").style.display="none";
+function closeModal() {
+  document.getElementById(" restrictionsModal").style.display = "none";
+}
+
+function toggleRestrictionsBanner(){
+  document.getElementById(" restrictionsBanner").style.display = "none";
 }
