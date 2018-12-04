@@ -62,5 +62,6 @@ GetTidy = function(file) {
 
 
 for(i in files){
+  #do it in a loop and each time append rows (rbind)
   tidytokens = rbind(tidytokens, GetTidy(i))
 }
