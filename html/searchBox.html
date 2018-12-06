@@ -1,4 +1,4 @@
-<div class="w3-card w3-block-bar" style="min-height:400px">
+<div class="w3-card w3-block-bar w3-border" style="min-height:400px">
   <header class="w3-container w3-light-gray">
     <div class="w3-text">
       <h3>Search and perform sentiment analysis on a corpus of State of the Union address texts</h3>
@@ -9,16 +9,16 @@
     <button class="w3-bar-item w3-button w3-border-right w3-border-left w3-border-top w3-mobile tablink w3-light-blue" onclick="openTab('textSearch')" id="textSearchbutton">Text Search</button>
     <button class="w3-bar-item w3-button w3-border-right w3-border-top w3-mobile tablink" onclick="openTab('byYear')" id="byYearbutton">Sentiment by Year</button>
     <button class="w3-bar-item w3-button w3-border-top w3-border-right w3-mobile tablink" onclick="openTab('fileviewer')" id="fileviewerbutton">File viewer</button>
+    <button class="w3-bar-item w3-button w3-border-top w3-border-right w3-mobile tablink" onclick="openTab('extras')" id="extrasbutton">Extras</button>
   </div> <!-- end w3-bar tab-bar -->
   <div id="textSearch" class="tab w3-container w3-padding">
     <form method="GET" action="../php/regex-finder.php">
       <label>Enter your search term to search for text within George H W Bush's 1989 SOTU:</label>
       <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="enter a search string" id="searchBox" required></input>
       <p><i>please note searches are not encrypted and should not be considered private</i></p>
-      <input type="submit" class="w3-button" value="Submit"></input>
+      <input type="submit" class="w3-button w3-light-gray w3-border w3-border-light-blue" value="Submit"></input>
     </form>
   </div> <!-- end search -->
-
 
   <div id="byYear" class="tab w3-container" style="display:none">
     <div class="w3-container">
@@ -58,14 +58,14 @@
       </form>
       <br><br>
     </div>
-  </div> <!-- end filter -->
+  </div> <!-- endbyYear -->
 
   <div id="fileviewer" class="tab w3-container" style="display:none">
     <div class="w3-cell-row">
       <div class="w3-cell">
         <p>Select a file to view:</p>
       </div>
-      <div class="w3=cell"> <button onclick="loadSOTUforViewer('1790')">Washington 1790</button></div>
+      <div class="w3-cell"> <button onclick="loadSOTUforViewer('1790')">Washington 1790</button></div>
       <div class="w3-cell"><button onclick="loadSOTUforViewer('1797')">Adams 1797</button></div>
       <div class="w3-cell"><button onclick="loadSOTUforViewer('2012')">Obama 2012</button></div>
     </div>
@@ -73,4 +73,18 @@
       <p>your browser does not support this view.</p>
     </iframe>
   </div> <!-- end fileviewer -->
+
+  <div id="extras" class="tab w3-container" style="display:none">
+    <h3>Check out these extras, contributions, games, etc:</h3>
+    <ul>
+      <li onclick="loadExtra('is-thy-union-here')" id="01"><u>"IS THY UNION HERE"</u> by Taylor-Cate Brown</li><br>
+      <li onclick="loadExtra('redacted-unions')" id="02"><u>"REDACTED Unions"</u> by Rebecca J. Parker</li><br>
+      <li onclick="loadExtra('trivia-of-the-union')" id="03"><u>"Trivia of the Union"</u> by Ivan Kavanagh, Neal McMahon, Keyti Toromanova, Abdur Khan, and Tyler Monaghan</li>
+    </ul>
+    <iframe class="w3-mobile w3-block" style="min-height:500px" id="extrasViewerFrame" src="">
+      <p>your browser does not support this view.</p>
+
+    </iframe>
+
+  </div><!-- end extras -->
 </div> <!-- end w3-card -->

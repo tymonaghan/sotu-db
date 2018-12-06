@@ -33,12 +33,25 @@ function loadSOTUforViewer(year) {
   }
 } //end loadSOTUforViewer
 
+function loadExtra(extraName){
+//document.getElementsByClassName("extras").style.display="none";
+//document.getElementById(extraName).style.display="block";
+if (extraName=="is-thy-union-here"){
+  document.getElementById("extrasViewerFrame").src="contributors/taylorcate/_Is Thy Union Here__.pdf";
+} else if (extraName=="redacted-unions"){
+  document.getElementById("extrasViewerFrame").src="contributors/RJP43/contribution_01/README.md";
+} else if (extraName == "trivia-of-the-union"){
+  document.getElementById("extrasViewerFrame").src="output/msg/trivia-otu-wait.md";
+}
+}
+
 function openTab(tabName) { //really not sure why i can't get this to work with the w3-hide/w3-show arrangement like showDropMenu, but style=display works for now.
   var i;
   var tablinks = document.getElementsByClassName("tablink");
   var x = document.getElementsByClassName("tab");
   document.getElementById("textSearch").value = "";
   document.getElementById("byYear").value = "";
+  //document.getElementById("extras").value="";
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
     tablinks[i].className = tablinks[i].className.replace(" w3-light-blue", "");
