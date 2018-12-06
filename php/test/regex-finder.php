@@ -70,13 +70,14 @@
       </div>
       <div class = "w3-container">
         <h3>number of times your search query appears: <b><?php echo $matchCount; ?> </b></h3>
-        <h3>sentiment trajectory: <?php
+
+<?php
         if ($matchCount > 1) {
+            echo "<h3>sentiment trajectory:</h3>";
             echo "<img src='../output/sentimentMatchChart.png' alt='chart of each occurence of your query by occurrence'/>";
         }
 
         ?>
-      </h3>
 
         <h3><b>sentences:</b></h3>
         <?php
