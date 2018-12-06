@@ -60,10 +60,10 @@ for (i in 1:length(stringMatchResult)){
                theOne$sentenceNumbers[i],
                "</div>",
                "<div class='w3-container w3-rest w3-cell w3-cell-middle w3-right w3-padding w3-hover-pale-blue'>",
-                   "GI: ",str_replace_all(sentimentDirection$SentimentGI[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown)),"<br>",
-                   "HE: ",str_replace_all(sentimentDirection$SentimentHE[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown)),"<br>",
-                   "LM: ",str_replace_all(sentimentDirection$SentimentLM[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown)),"<br>",
-                   "QDAP: ",str_replace_all(sentimentDirection$SentimentQDAP[i],c("positive"=thumbsUp, "neutral"=neutralIcon, "negative"=thumbsDown)),
+                   "GI: ",str_replace_all(sentimentDirection$SentimentGI[i],c("positive"=icon-thumbs-up, "neutral"=icon-half-starIcon, "negative"=icon-thumbs-down)),"<br>",
+                   "HE: ",str_replace_all(sentimentDirection$SentimentHE[i],c("positive"=icon-thumbs-up, "neutral"=icon-half-starIcon, "negative"=icon-thumbs-down)),"<br>",
+                   "LM: ",str_replace_all(sentimentDirection$SentimentLM[i],c("positive"=icon-thumbs-up, "neutral"=icon-half-starIcon, "negative"=icon-thumbs-down)),"<br>",
+                   "QDAP: ",str_replace_all(sentimentDirection$SentimentQDAP[i],c("positive"=icon-thumbs-up, "neutral"=icon-half-starIcon, "negative"=icon-thumbs-down)),
                     "</div>","</div>"))
 }
 sink()
