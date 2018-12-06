@@ -25,5 +25,7 @@
 15. **[drawio](https://draw.io/)** Software system diagramming
 16. **[Paint.net](https://www.getpaint.net/)** image processing and conversion
 17. **[PDF to Image](https://pdftoimage.com/)** turn PDFs into Images (US Constitution photo)
+18. **[Nu Html Checker](https://validator.w3.org/nu/)** find HTML errors
+19. **[&what;](http://www.amp-what.com/unicode/search/)** find HTML character entities
 
 Where should credit for digital projects begin and end? I relied upon countless software and hardware developers, manufacturers, bloggers, assembly line employees, etc. for the hardware and software on which SOTU-db runs. SOTU-db wouldn't work without employees of the telecoms that serve my house, Loyola University Chicago, and the datacenters where my data lives and whence it is served. The personal and professional networks of which I'm a part, and even Donald Trump, deserve some share of credit for inspiring this project and helping me to envision and instantiate it. If physical exercise is as generative to the creative process as it seems, then even the manufacturers of my ice skates or shoes are part of the toolchain that made SOTU-db possible. Deciding where to draw the line and what products and influences to cite is a subjective and messy process.

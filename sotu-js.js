@@ -97,3 +97,19 @@ function closeModal() { //close restrictions modal when X is pressed
 function toggleRestrictionsBanner() { //close restrictions banner when X is pressed
   document.getElementById(" restrictionsBanner").style.display = "none";
 } //end toggleRestrictionsBanner()
+
+function faqSwitcher(accordionContentID) {
+  var x = document.getElementById(String(accordionContentID));
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-blue-gray";
+    //x.previousElementSibling.className.replace(" w3-border-bottom", "");
+
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+      x.previousElementSibling.className.replace(" w3-blue-gray", "");
+    //  x.previousElementSibling.className += " w3-border-bottom");
+
+  }
+}
