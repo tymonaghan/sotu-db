@@ -8,10 +8,11 @@
       <b>the following limitations are in place while SOTU-db is in pre-release:</b>
       <ul>
         <li>text search only accepts single words</li>
-        <li>only a limited set of 13 SOTUs is available for analysis</li>
-        <li>years available: 1981, 1985, 1989 - 1993, 1997, 2001, 2005, 2009, 2013, 2017</li>
+        <li>queries that return 0 or 1 results may display incorrectly</li>
+        <li>SOTUs available for text search: 1978 - 2017</li>
+        <li>sentiment for text search is always assessed by sentence, chunkSize cannot be selected</li>
+        <li>years available for by-year sentiment analysis: 1981, 1985, 1989 - 1993, 1997, 2001, 2005, 2009, 2013, 2017</li>
         <li>chunkSize sets the size of chunks of text (in words) for which SOTU-db will return sentiment. Smaller chunkSize means more datapoints, less context.</li>
-        <li>chunkSize does not work for text search, only SOTU by year (sentiment for text search is always assessed by sentence)</li>
         <li>SOTU-db can currently only handle one session at a time. If another use attempts to access SOTU-db while you are using it, you will experience strange behaviors</li>
         <li>you may encounter other limitations or unexpected behaviors, or the site may go offline entirely without warning</li>
       </ul>

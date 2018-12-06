@@ -16,7 +16,9 @@ library(glue)
 library(SentimentAnalysis)
 library(tidytext)
 library(tidyverse)
-load("../r-env/tidy-workspace.RData")
+
+####load workspace - this determines corpus ####
+load("../r-env/tidy-workspace-2.RData")
 
 #### set REGEX versions of query ####
 regexUserQuery = paste0("(?i)",userQuery)
@@ -74,7 +76,7 @@ for (i in 1:nrow(stringMatchResult)){
 }
 sink()
 
-png("../output/sentimentMatchChart.png", width=600, height=300)
+png("../output/sentimentMatchChart.png", width=1000, height=450)
 plotSentiment(sentiment, x=stringMatchResult$year+(0.001*stringMatchResult$sentenceNumber), xlab="year of occurrence") +
   ggtitle(paste0("sentiment by year for each occurence of \"",userQuery,"\"")) +
   geom_point(shape=18, size=3) +

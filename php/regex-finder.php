@@ -55,7 +55,7 @@
       <?php include 'topnav.php';?>
     </div> <!-- end w3-top -->
     <div class="w3-content w3-container" id="mainContent">
-      <br><br><br><!-- the calculateYoffsets thing isn't working here (probably bc using w3-content) so just <br>x3 for now -->
+      <br><br><br><br><!-- the calculateYoffsets thing isn't working here (probably bc using w3-content) so just <br>x3 for now -->
       <div class="w3-card w3-white">
         <header class="w3-container w3-purple">
           <div class="w3-text">
@@ -66,7 +66,7 @@
         <h3>your query:
           <b><?php echo $query ?></b>
         </h3>
-        <h3><b>your corpus: </b>1981, 1985, 1989 - 1993, 1997, 2001, 2005, 2009, 2013, 2017</h3>
+        <h3><b>your corpus: </b>1978 - 2017</h3>
       </div>
       <div class = "w3-container">
         <h3><b>number of times your search query appears: </b><?php echo $matchCount; ?> </h3>
@@ -74,7 +74,7 @@
 <?php
         if ($matchCount > 1) {
             echo "<h3><b>sentiment trajectory:</b></h3>";
-            echo "<img src='../output/sentimentMatchChart.png' alt='chart of each occurence of your query by year'/>";
+            echo "<img src='../output/sentimentMatchChart.png' alt='chart of each occurence of your query by year'/ style='max-width:100%'>";
         }
 
         ?>

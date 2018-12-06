@@ -17,12 +17,12 @@ iconThumbsDown = toString("<i class='fa fa-thumbs-o-down' style='color:red'></i>
 
 
 #### generate tidyWords ####
-files = list.files("../speeches-sample/") # get a list of the files in the input directory
+files = list.files("../speeches-ucsb-pres-project/") # get a list of the files in the input directory
 tidyWords = data_frame() #make the tidySentences data_frame (empty for now)
 
 GetTidyWords = function(file) {
   
-  fileName <- glue("../speeches-sample/", file, sep = "")
+  fileName <- glue("../speeches-ucsb-pres-project/", file, sep = "")
   fileName <- trimws(fileName)   # get rid of any whitespace
   fileText <- glue(read_file(fileName))  # read in the new file
   #fileText <- read_file(file)  # read in the new file
@@ -55,12 +55,12 @@ for(i in files){
 
 
 #### generate tidySentences ####
-files = list.files("../speeches-sample/") # get a list of the files in the input directory
+files = list.files("../speeches-ucsb-pres-project/") # get a list of the files in the input directory
 tidySentences = data_frame() #make the tidySentences data_frame (empty for now)
 
 GetTidySentences = function(file) {
   
-  fileName <- glue("../speeches-sample/", file, sep = "")
+  fileName <- glue("../speeches-ucsb-pres-project/", file, sep = "")
   fileName <- trimws(fileName)   # get rid of any whitespace
   fileText <- glue(read_file(fileName))  # read in the new file
   #fileText <- read_file(file)  # read in the new file
@@ -110,7 +110,7 @@ GetClearText = function(file){
 }
 
 ####generate environment ####
-files = list.files("../speeches-sample/") # get a list of the files in the input directory
+files = list.files("../speeches-ucsb-pres-project/") # get a list of the files in the input directory
 
 
 #### save environment ####
@@ -135,14 +135,14 @@ sprintf("%s", 1:length(files))
 
 
 for (i in files){
-  fileName = paste0("../speeches-sample/",file)
+  fileName = paste0("../speeches-ucsb-pres-project/",file)
   annotations[i]= annotateFile(fileName)
 }
 file = files[1]
-filePath = "../speeches-sample/small/"
+filePath = "../speeches-ucsb-pres-project/small/"
 fileName = paste0(filePath,file)
 paste0("annotated-",file) = annotateFile(fileName)
 
 
-clearText1989 = readLines("../speeches-sample/1989-02-09-bush.md")
+clearText1989 = readLines("../speeches-ucsb-pres-project/1989-02-09-bush.md")
 clearText1989 = gsub("\\$", "dollars ", clearText1989)
