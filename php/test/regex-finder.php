@@ -1,5 +1,5 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="https://github.com/tymonaghan/sotu-db/raw/master/images/favicon.png">
@@ -9,6 +9,9 @@
     <title>SOTU-db</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style>
+    html{
+
+    }
       body {
         background: url("../images/Obama_waves_State_of_the_Union_2011-lightened.jpg") no-repeat center;
         background-size: cover;
@@ -18,14 +21,21 @@
 
   <body>
     <?php
+    //this block checks for windows or linux and sets $RScript path accordingly
+      $RScript = '/usr/lib/R/bin/Rscript';
+      if (strcasecmp(substr(PHP_OS_FAMILY, 0, 3), 'WIN') == 0) {
+          $RScript='C:\"Program Files"\R\R-3.5.1\bin\RScript.exe';
+      }
+
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
-      $rawQuery = $_GET["searchTerm"];
-      $rawChunkSize = $_GET["chunkSize"];
-      $query = escapeshellcmd($rawQuery);
-      $chunkSize = escapeshellcmd($rawChunkSize);
+        $rawQuery = $_GET["searchTerm"];
+        $rawChunkSize = $_GET["chunkSize"];
+        $query = escapeshellcmd($rawQuery);
+        $chunkSize = escapeshellcmd($rawChunkSize);
     } //if the form is filled out, clean the "searchTerm" and store as query
 
-    function clean_input($data) { //function to clean input
+    function clean_input($data)
+    { //function to clean input
     $data = trim($data); //trim white space from end
     $data = stripslashes($data); //remove backslashes (since they are escape characters)
     $data = htmlspecialchars($data); //convert special characters to html entities
@@ -33,18 +43,19 @@
     return $data;
     }
 
-    $output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/regex-finder.R $query`;
-    #$output = `/usr/lib/R/bin/Rscript ../r-scripts/regex-finder.R $query`;
+    $output = `$RScript ../r-scripts/new-regex-finder.R $query`;
 
-    $matchCount = file_get_contents("../output/test11.txt");
-    $matchedSentences = file("../output/test22.txt");
+
+    $matchCount = file_get_contents("../output/matchCount.txt");
+    $matchedSentences = file("../output/matchSentences.txt");
+    $matchedSentencesWithSentiment = file("../output/sentimentDirections.txt");
     ?>
 
-    <div class="w3-top">
+    <div class="w3-top" id="topnav">
       <?php include 'topnav.php';?>
     </div> <!-- end w3-top -->
-    <div class="w3-content w3-container">
-      <br><br>
+    <div class="w3-content w3-container" id="mainContent">
+      <br><br><br><!-- the calculateYoffsets thing isn't working here (probably bc using w3-content) so just <br>x3 for now -->
       <div class="w3-card w3-white">
         <header class="w3-container w3-purple">
           <div class="w3-text">
@@ -55,14 +66,26 @@
         <h2>your query:
           <b><?php echo $query ?></b>
         </h2>
-        <h2>your corpus: <b>Bush-41's 1989 SOTU</b></h2>
+        <h2>your corpus: <b>1981, 1985, 1989 - 1993, 1997, 2001, 2005, 2009, 2013, 2017</b></h2>
       </div>
       <div class = "w3-container">
         <h3>number of times your search query appears: <b><?php echo $matchCount; ?> </b></h3>
+
+<?php
+        if ($matchCount > 1) {
+            echo "<h3>sentiment trajectory:</h3>";
+            echo "<img src='../output/sentimentMatchChart.png' alt='chart of each occurence of your query by occurrence'/>";
+        }
+
+        ?>
+
         <h3><b>sentences:</b></h3>
         <?php
-        foreach($matchedSentences as $line){
-          echo "<div class = 'w3-border w3-padding w3-hover-pale-blue'>" . $line . '</div><br>';
+        foreach ($matchedSentencesWithSentiment as $line) {
+            echo "<div class='w3-cell-row w3-border w3-hover-pale-blue'>";
+            echo "<div class='w3-container w3-cell w3-cell-middle w3-twothird 'style='padding-top:10px,padding-bottom:10px'>";
+            echo $line;
+            echo "</div></div>";
         }
         #echo $matchedSentences;
         ?>
@@ -70,5 +93,4 @@
       </div> <!-- end w3-card -->
     </div> <!-- end w3-content div -->
   </body>
-
 </html>

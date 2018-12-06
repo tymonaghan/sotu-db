@@ -9,6 +9,12 @@
     <title>Documentation: SOTU-db</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../sotu-js.js"></script>
+    <style>
+      button {
+        margin: 0;
+      }
+    </style>
+
   </head>
 
   <body>
@@ -20,12 +26,47 @@
       <br><br><br>
       <h1>Documentation</h1>
       <p><i>This section of the site is still in progress.</i></p>
+      <div class="w3-bar-block">
+
+        <h3><a href="#" class="w3-bar-item w3-button  w3-border-bottom w3-border-light-blue" onClick="faqSwitcher('aboutSentiment')">About Sentiment<i class="w3-right fa fa-chevron-down w3-margin"></i></a></h3>
+        <div id="aboutSentiment" class="w3-hide">
+          <p class="w3-bar-item w3-button">SOTU-db is a tool to assess the "sentiment" of texts. This primarily means determining whether the text is "positive" or "negative." In most cases, this is accomplished with a basic positive/negative
+            "sentiment lexicon," or word list. The list contains thousands of words marked as "positive" (such as "good," "happy," "peace") and negative (such as "sad," "angry," "kill"). SOTU-db searches the SOTU texts for these words, and simply
+            counts the number of positive matches subtracted by the number of negative matches to determine "sentiment." In some cases the computations are more complicated than this, but this is the underlying method for all anaylses on SOTU-db.</p>
+        </div> <!-- end "aboutSentiment" div -->
+
+        <h3><a href="#" class="w3-bar-item w3-button  w3-border-bottom w3-border-light-blue" onClick="faqSwitcher('aboutTexts')">About the Texts<i class="w3-right fa fa-chevron-down w3-margin"></i></a></h3>
+        <div id="aboutTexts" class="w3-hide">
+          <p class="w3-bar-item w3-button">Insert info about texts here.</p><object class="w3-bar-item" data="../documentation/note-on-texts.md"></object>
+        </div> <!-- end "aboutSentiment" div -->
+
+        <h3><a href="#" class="w3-bar-item w3-button  w3-border-bottom w3-border-light-blue" onClick="faqSwitcher('aboutSOTUs')">About State of the Union Addresses<i class="w3-right fa fa-chevron-down w3-margin"></i></a></h3>
+        <div id="aboutSOTUs" class="w3-hide">
+          <p class="w3-bar-item w3-button">The US Constitution (Article 2, Section 3) mandates that the President of the United States "shall from time to time give to the Congress Information of the State of the Union, and recommend to their
+            Consideration such measures as he shall judge necessary and expedient." The US House's history website has an <a href="https://history.house.gov/Institution/SOTU/State-of-the-Union/">interesting page on the State of the Union's history;</a>
+            see also the excellent State of the Union section of <a href="https://www.presidency.ucsb.edu/documents/presidential-documents-archive-guidebook/annual-messages-congress-the-state-the-union">The American
+              Presidency Project</a> by John Woolley and Gerhard Peters at UC-Santa Barbara to learn more about the tradition of "State of the Union" addresses.</p>
+        </div> <!-- end "aboutSentiment" div -->
+
+        <h3><a href="#" class="w3-bar-item w3-button  w3-border-bottom w3-border-light-blue" onClick="faqSwitcher('aboutTyler')">About Tyler<i class="w3-right fa fa-chevron-down w3-margin"></i></a></h3>
+        <div id="aboutTyler" class="w3-hide">
+          <p class="w3-bar-item w3-button">See my portfolio at <a href="portfolio.tylermonaghan.com">portfolio.tylermonaghan.com</a></p>
+        </div> <!-- end "aboutSentiment" div -->
+
+      </div>
       <ul>
         <li>
           <p><a href="https://blog.sotu-db.com">Visit the SOTU-db development blog</a></p>
         </li>
         <li>more to come...</li>
       </ul>
+
+    </div>
+    <!-- end w3-bar-block -->
+
+
+
+
     </div>
 
     <script>

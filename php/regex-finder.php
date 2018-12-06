@@ -43,7 +43,7 @@
     return $data;
     }
 
-    $output = `$RScript ../r-scripts/regex-finder.R $query`;
+    $output = `$RScript ../r-scripts/new-regex-finder.R $query`;
 
 
     $matchCount = file_get_contents("../output/matchCount.txt");
@@ -55,7 +55,7 @@
       <?php include 'topnav.php';?>
     </div> <!-- end w3-top -->
     <div class="w3-content w3-container" id="mainContent">
-      <br><br><br><!-- the calculateYoffsets thing isn't working here (probably bc using w3-content) so just <br>x3 for now -->
+      <br><br><br><br><!-- the calculateYoffsets thing isn't working here (probably bc using w3-content) so just <br>x3 for now -->
       <div class="w3-card w3-white">
         <header class="w3-container w3-purple">
           <div class="w3-text">
@@ -63,25 +63,29 @@
           </div>
         </header>
         <div class = "w3-container w3-light-gray">
-        <h2>your query:
+        <h3>your query:
           <b><?php echo $query ?></b>
-        </h2>
-        <h2>your corpus: <b>Bush-41's 1989 SOTU</b></h2>
+        </h3>
+        <h3><b>your corpus: </b>1978 - 2017</h3>
       </div>
       <div class = "w3-container">
-        <h3>number of times your search query appears: <b><?php echo $matchCount; ?> </b></h3>
-        <h3>sentiment trajectory: <?php
+        <h3><b>number of times your search query appears: </b><?php echo $matchCount; ?> </h3>
+
+<?php
         if ($matchCount > 1) {
-            echo "<img src='../output/sentimentMatchChart.png' alt='chart of each occurence of your query by occurrence'/>";
+            echo "<h3><b>sentiment trajectory:</b></h3>";
+            echo "<img src='../output/sentimentMatchChart.png' alt='chart of each occurence of your query by year'/ style='max-width:100%'>";
         }
 
         ?>
-      </h3>
 
         <h3><b>sentences:</b></h3>
         <?php
         foreach ($matchedSentencesWithSentiment as $line) {
+            echo "<div class='w3-cell-row w3-border w3-hover-pale-blue'>";
+            echo "<div class='w3-container w3-cell w3-cell-middle'>";
             echo $line;
+            echo "</div></div>";
         }
         #echo $matchedSentences;
         ?>
