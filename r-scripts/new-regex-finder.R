@@ -55,7 +55,7 @@ sink(tempDir)
 for (i in 1:nrow(stringMatchResult)){
   writeLines(paste0(stringMatchResult$sentenceText[i],
                     "</div>",
-                    "<div class='w3-container w3-cell w3-cell-middle' style='width:75px'>",
+                    "<div class='w3-container w3-cell w3-cell-middle'>",
                     "sentence n=", 
                     stringMatchResult$sentenceNumber[i],
                     "<br>year=",
@@ -63,17 +63,19 @@ for (i in 1:nrow(stringMatchResult)){
                     "<br>POTUSname=",
                     stringMatchResult$potusName[i],
                     "</div>",
-                    "<div class='w3-container w3-rest w3-cell w3-cell-middle w3-right w3-padding w3-hover-pale-blue'>",
-                    "GI: ",str_replace_all(stringMatchResult$GIsentiment[i],c("positive"=iconThumbsUp, "neutral"=iconHalfStar, "negative"=iconThumbsDown)),"<br>",
-                    "HE: ",str_replace_all(stringMatchResult$HEsentiment[i],c("positive"=iconThumbsUp, "neutral"=iconHalfStar, "negative"=iconThumbsDown)),"<br>",
-                    "LM: ",str_replace_all(stringMatchResult$LMsentiment[i],c("positive"=iconThumbsUp, "neutral"=iconHalfStar, "negative"=iconThumbsDown)),"<br>",
+                    "<div class='w3-container w3-cell w3-cell-middle w3-right' style='min-width:100px'>",
+                    "GI: ",str_replace_all(stringMatchResult$GIsentiment[i],c("positive"=iconThumbsUp, "neutral"=iconHalfStar, "negative"=iconThumbsDown)),
+                    "<br>",
+                    "HE: ",str_replace_all(stringMatchResult$HEsentiment[i],c("positive"=iconThumbsUp, "neutral"=iconHalfStar, "negative"=iconThumbsDown)),
+                    "<br>",
+                    "LM: ",str_replace_all(stringMatchResult$LMsentiment[i],c("positive"=iconThumbsUp, "neutral"=iconHalfStar, "negative"=iconThumbsDown)),
+                    "<br>",
                     "QDAP: ",str_replace_all(stringMatchResult$QDAPsentiment[i],c("positive"=iconThumbsUp, "neutral"=iconHalfStar, "negative"=iconThumbsDown))))
 }
 sink()
 
-
 png("../output/sentimentMatchChart.png", width=600, height=300)
-plotSentiment(sentiment, x=stringMatchResult$year, xlab="year of occurrence") +
+plotSentiment(sentiment, x=stringMatchResult$year+(0.001*stringMatchResult$sentenceNumber), xlab="year of occurrence") +
   ggtitle(paste0("sentiment by year for each occurence of \"",userQuery,"\"")) +
   geom_point(shape=18, size=3) +
   geom_smooth(color="purple")+

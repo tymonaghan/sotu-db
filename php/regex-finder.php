@@ -63,18 +63,18 @@
           </div>
         </header>
         <div class = "w3-container w3-light-gray">
-        <h2>your query:
+        <h3>your query:
           <b><?php echo $query ?></b>
-        </h2>
-        <h2>your corpus: <b>1981, 1985, 1989 - 1993, 1997, 2001, 2005, 2009, 2013, 2017</b></h2>
+        </h3>
+        <h3><b>your corpus: </b>1981, 1985, 1989 - 1993, 1997, 2001, 2005, 2009, 2013, 2017</h3>
       </div>
       <div class = "w3-container">
-        <h3>number of times your search query appears: <b><?php echo $matchCount; ?> </b></h3>
+        <h3><b>number of times your search query appears: </b><?php echo $matchCount; ?> </h3>
 
 <?php
         if ($matchCount > 1) {
-            echo "<h3>sentiment trajectory:</h3>";
-            echo "<img src='../output/sentimentMatchChart.png' alt='chart of each occurence of your query by occurrence'/>";
+            echo "<h3><b>sentiment trajectory:</b></h3>";
+            echo "<img src='../output/sentimentMatchChart.png' alt='chart of each occurence of your query by year'/>";
         }
 
         ?>
@@ -83,7 +83,7 @@
         <?php
         foreach ($matchedSentencesWithSentiment as $line) {
             echo "<div class='w3-cell-row w3-border w3-hover-pale-blue'>";
-            echo "<div class='w3-container w3-cell w3-cell-middle w3-twothird 'style='padding-top:10px,padding-bottom:10px'>";
+            echo "<div class='w3-container w3-cell w3-cell-middle'>";
             echo $line;
             echo "</div></div>";
         }
