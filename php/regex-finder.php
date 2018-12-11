@@ -8,6 +8,7 @@
 
     <title>SOTU-db</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../sotu-js.js"></script>
     <style>
     html{
 
@@ -91,5 +92,7 @@
       </div>
       </div> <!-- end w3-card -->
     </div> <!-- end w3-content div -->
+
+    <script>includeHTML();</script>
   </body>
 </html>
