@@ -35,29 +35,33 @@
     <div w3-include-html="html/restrictionsBanner.html"></div>
     <div w3-include-html="html/restrictionsModal.html"></div>
 
-    <div class="w3-cell-row w3-margin w3-padding" id="mainContent" style="position:relative;top:100px;">
-      <div class="w3-cell w3-twothirds w3-padding w3-mobile">
+    <div class="w3-cell-row" id="mainContent" style="position:relative;top:100px">
+      <div class="w3-hide-small w3-container w3-cell w3-left" style="min-width:15%"></div>
+      <div class="w3-container w3-cell w3-half w3-mobile">
         <div w3-include-html="html/searchBox.html"></div>
       </div>
 
-      <div class="w3-cell w3-mobile w3-rest w3-padding">
+      <div class="w3-container w3-cell w3-mobile w3-quarter w3-right">
+        <br class="w3-hide-medium w3-hide-large"><br class="w3-hide-medium w3-hide-large">
         <a href="https://twitter.com/SOTU_db?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SOTU_db</a>
         <a class="twitter-timeline w3-opacity-min" href="https://twitter.com/SOTU_db/lists/presidential-libraries?ref_src=twsrc%5Etfw">A Twitter List by SOTU_db</a>
       </div>
     </div>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
       includeHTML();
     </script>
     <script type="text/javascript" id="cookiebanner" src="https://cdnjs.cloudflare.com/ajax/libs/cookie-banner/1.2.2/cookiebanner.min.js"></script>
+
   </body>
+
   <script>
     function calculateYoffsets() {
       var topnavOffset = document.getElementById('topnav').offsetHeight; //set to height of topnav bar
       var topnavPlusBannerOffset = document.getElementById('restrictionsBanner').offsetHeight + topnavOffset; //set to height of topnav plus restrictions banner
       document.getElementById('restrictionsBanner').style.top = topnavOffset + "px";
-      document.getElementById('mainContent').style.top = topnavPlusBannerOffset + "px";
+      document.getElementById('mainContent').style.top = topnavPlusBannerOffset + 15 + "px";
     }
     // i really don't know why it's not taking this function from sotu-js.js... it only works if I leave it here.
   </script>

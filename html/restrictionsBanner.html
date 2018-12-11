@@ -1,14 +1,14 @@
-<div class="w3-bar w3-pale-yellow w3-center w3-border w3-mobile" id="restrictionsBanner" style="position:relative; top:50px;">
+<div class="w3-bar w3-pale-yellow w3-center w3-border w3-mobile w3-top" id="restrictionsBanner" style="position:fixed; top:50px;">
   <p>SOTU-db is currently in a limited alpha state.
 
-    <span class="w3-button w3-border w3-border-orange w3-round-xlarge w3-hide-small" onclick="document.getElementById('restrictionsModal').style.display='block'">Click here</span>
-    <span class="w3-small w3-border w3-border-orange w3-hide-medium w3-hide-large" onclick="document.getElementById('restrictionsModal').style.display='block'">Click here</span>
+    <span class="w3-button w3-border w3-border-orange w3-round-xlarge w3-hide-small" onclick="document.getElementById('restrictionsModal').style.display='block'">Click&nbsp;here</span>
+    <span class="w3-small w3-border w3-border-orange w3-hide-medium w3-hide-large" onclick="document.getElementById('restrictionsModal').style.display='block'">Click&nbsp;here</span>
 
     to learn about the restrictions in place. (version a.3.0)
     <span class="w3-button w3-right w3-xlarge w3-hide-small" onclick="
-          document.getElementById('restrictionsBanner').style.display='none'">&#11199;</span>
+          document.getElementById('restrictionsBanner').style.display='none';calculateYoffsets()">&#11199;</span>
     <a class="w3-button w3-large w3-hide-medium w3-hide-large" onclick="
-                document.getElementById('restrictionsBanner').style.display='none'">&#11199;</a>
+                document.getElementById('restrictionsBanner').style.display='none';calculateYoffsets()">&#11199;</a>
   </p>
   <!-- line above should be changed to use the toggleRestrictionsBanner js function but it's not finding it right now. for now, x just disappears the banner. -->
 </div>

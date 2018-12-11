@@ -51,9 +51,8 @@
     $matchedSentencesWithSentiment = file("../output/sentimentDirections.txt");
     ?>
 
-    <div class="w3-top" id="topnav">
-      <?php include 'topnav.php';?>
-    </div> <!-- end w3-top -->
+    <div w3-include-html="../html/topnav.html"></div>
+
     <div class="w3-content w3-container" id="mainContent">
       <br><br><br><br><!-- the calculateYoffsets thing isn't working here (probably bc using w3-content) so just <br>x3 for now -->
       <div class="w3-card w3-white">
@@ -63,8 +62,8 @@
           </div>
         </header>
         <div class = "w3-container w3-light-gray">
-        <h3>your query:
-          <b><?php echo $query ?></b>
+        <h3><b>your query:</b>
+          <?php echo $query ?>
         </h3>
         <h3><b>your corpus: </b>1978 - 2017</h3>
       </div>
