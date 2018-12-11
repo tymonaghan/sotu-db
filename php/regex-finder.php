@@ -83,7 +83,7 @@
         <?php
         foreach ($matchedSentencesWithSentiment as $line) {
             echo "<div class='w3-cell-row w3-border w3-hover-pale-blue'>";
-            echo "<div class='w3-container w3-cell w3-cell-middle'>";
+            echo "<div class='w3-container w3-cell w3-cell-middle w3-mobile'>";
             echo $line;
             echo "</div></div>";
         }

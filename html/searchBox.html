@@ -1,4 +1,4 @@
-<div class="w3-card w3-block-bar w3-border w3-white" style="min-height:400px">
+<div class="w3-card w3-block-bar w3-border w3-white w3-mobile" style="min-height:400px">
   <header class="w3-container w3-light-gray">
     <div class="w3-text">
       <h3>Search and perform sentiment analysis on a corpus of State of the Union address texts</h3>
@@ -11,7 +11,7 @@
     <button class="w3-bar-item w3-button w3-border-top w3-border-right w3-mobile tablink" onclick="openTab('fileviewer')" id="fileviewerbutton">File viewer</button>
     <button class="w3-bar-item w3-button w3-border-top w3-border-right w3-mobile tablink" onclick="openTab('extras')" id="extrasbutton">Extras</button>
   </div> <!-- end w3-bar tab-bar -->
-  <div id="textSearch" class="tab w3-container w3-padding">
+  <div id="textSearch" class="tab w3-container w3-padding w3-mobile">
     <form method="GET" action="../php/regex-finder.php">
       <label>Enter your search term to search for text within State of the Union Texts 1978-2017:</label>
       <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="enter a search string" id="searchBox" required></input>
@@ -21,7 +21,7 @@
     </form>
   </div> <!-- end search -->
 
-  <div id="byYear" class="tab w3-container" style="display:none">
+  <div id="byYear" class="tab w3-container w3-mobile" style="display:none">
     <div class="w3-container">
       <h2>Sentiment by Year</h2>
       <p>Select a SOTU from the list and a chunk size to see the sentiment from the beginning to the end of that year's address. Sentiment is evaluated per-chunk, so smaller chunks mean more data points.</p>
@@ -61,7 +61,7 @@
     </div>
   </div> <!-- endbyYear -->
 
-  <div id="fileviewer" class="tab w3-container" style="display:none">
+  <div id="fileviewer" class="tab w3-container w3-mobile" style="display:none">
     <div class="w3-cell-row">
       <div class="w3-cell">
         <p>Select a file to view:</p>
@@ -75,7 +75,7 @@
     </iframe>
   </div> <!-- end fileviewer -->
 
-  <div id="extras" class="tab w3-container" style="display:none">
+  <div id="extras" class="tab w3-container w3-mobile" style="display:none">
     <h3>Check out these extras, contributions, games, etc:</h3>
     <ul>
       <li onclick="loadExtra('is-thy-union-here')" id="01"><u>"IS THY UNION HERE"</u> by Taylor-Cate Brown</li><br>
