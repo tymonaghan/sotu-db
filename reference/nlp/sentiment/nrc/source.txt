@@ -1,1 +1,0 @@
-http://sentiment.nrc.ca/lexicons-for-research/NRC-Emotion-Lexicon.zip

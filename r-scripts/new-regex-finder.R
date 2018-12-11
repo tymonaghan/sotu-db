@@ -36,7 +36,7 @@ sink()
 stringMatchResult = data_frame()
 stringMatchResult = tidySentences[which(tidySentences$word == str_match_all(tidySentences$word, regexUserQuerySentence)), ]
 
-#### write matching sentences to file 
+#### write matching sentences to file
 tempDir=file("../output/matchSentences.txt")
 sink(tempDir)
 writeLines(unlist(lapply(stringMatchResult$word, paste, collapse=" ")))
@@ -49,7 +49,7 @@ sentimentDirection = convertToDirection(sentiment)
 stringMatchResult=cbind(sentimentDirection$SentimentGI,sentimentDirection$SentimentHE,sentimentDirection$SentimentLM,sentimentDirection$SentimentQDAP,stringMatchResult)
 names(stringMatchResult) = c("GIsentiment","HEsentiment","LMsentiment","QDAPsentiment","sentenceText","fileName","year","sentenceNumber","potusName")
 
-  
+
 tempDir=file("../output/sentimentDirections.txt")
 sink(tempDir)
 
@@ -57,15 +57,15 @@ sink(tempDir)
 for (i in 1:nrow(stringMatchResult)){
   writeLines(paste0(stringMatchResult$sentenceText[i],
                     "</div>",
-                    "<div class='w3-container w3-cell w3-cell-middle'>",
-                    "sentence n=", 
-                    stringMatchResult$sentenceNumber[i],
-                    "<br>year=",
+                    "<div class='w3-container w3-cell w3-cell-middle w3-mobile w3-light-gray'>",
+                    "year=",
                     stringMatchResult$year[i],
+                    "<br>sentence n=",
+                    stringMatchResult$sentenceNumber[i],
                     "<br>POTUSname=",
                     stringMatchResult$potusName[i],
                     "</div>",
-                    "<div class='w3-container w3-cell w3-cell-middle w3-right' style='min-width:100px'>",
+                    "<div class='w3-container w3-cell w3-cell-middle w3-right w3-mobile' style='min-width:100px'>",
                     "GI: ",str_replace_all(stringMatchResult$GIsentiment[i],c("positive"=iconThumbsUp, "neutral"=iconHalfStar, "negative"=iconThumbsDown)),
                     "<br>",
                     "HE: ",str_replace_all(stringMatchResult$HEsentiment[i],c("positive"=iconThumbsUp, "neutral"=iconHalfStar, "negative"=iconThumbsDown)),
@@ -81,5 +81,5 @@ plotSentiment(sentiment, x=stringMatchResult$year+(0.001*stringMatchResult$sente
   ggtitle(paste0("sentiment by year for each occurence of \"",userQuery,"\"")) +
   geom_point(shape=18, size=3) +
   geom_smooth(color="purple")+
-  theme_minimal() 
+  theme_minimal()
 dev.off()

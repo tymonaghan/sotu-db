@@ -25,9 +25,9 @@ function updateFilterSearch() { //NOT CURRENTLY USED as of a.2.0, used to update
 
 function loadSOTUforViewer(year) { // load content for SOTU viewer in searchbox
   if (year == 1790) {
-    document.getElementById("fileViewerFrame").src = "speeches-ucsb-pres-project/1790-01-08-washington.md"
+    document.getElementById("fileViewerFrame").src = "speeches-ucsb-pres-project/older/1790-01-08-washington.md"
   } else if (year == 1797) {
-    document.getElementById("fileViewerFrame").src = "speeches-ucsb-pres-project/1797-11-22-adams.md"
+    document.getElementById("fileViewerFrame").src = "speeches-ucsb-pres-project/older/1797-11-22-adams.md"
   } else if (year == 2012) {
     document.getElementById("fileViewerFrame").src = "speeches-ucsb-pres-project/2012-01-24-obama.md"
   }
