@@ -24,21 +24,18 @@
     <style>
       body {
         background: url("images/constitution-art2sec3-lightened.jpg");
-        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
       }
     </style>
   </head>
 
   <body onload="calculateYoffsets()">
-    <div class="w3-top" id="topnav">
-      <!-- top menu bar -->
-      <?php include './php/topnav.php';?>
-    </div>
-
+    <div w3-include-html="html/topnav.html"></div>
     <div w3-include-html="html/restrictionsBanner.html"></div>
     <div w3-include-html="html/restrictionsModal.html"></div>
 
-    <div class="w3-cell-row w3-margin w3-padding" id="mainContent" style="position:fixed;top:100px;">
+    <div class="w3-cell-row w3-margin w3-padding" id="mainContent" style="position:relative;top:100px;">
       <div class="w3-cell w3-twothirds w3-padding w3-mobile">
         <div w3-include-html="html/searchBox.html"></div>
       </div>
