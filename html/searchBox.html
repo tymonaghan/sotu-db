@@ -13,11 +13,19 @@
   </div> <!-- end w3-bar tab-bar -->
   <div id="textSearch" class="tab w3-container w3-padding w3-mobile">
     <form method="GET" action="../php/regex-finder.php">
-      <label>Enter your search term to search for text within State of the Union Texts 1978-2017:</label>
+      <label>
+        <h2>Enter your search term to search for text within State of the Union Texts 1978-2017:</h2>
+      </label>
       <!-- begin tooltip experiment!
       <p class="w3-tooltip">Search help
         <span class="w3-text w3-tag w3-white w3-text-purple">You may use "quotes to enclose" a search with multiple words</span></p> -->
       <input class="w3-input w3-border w3-round" type="text" name="searchTerm" placeholder="enter a search string" id="searchBox" required></input>
+      <div class="w3-bar w3-purple">
+        <div class="w3-dropdown-hover">
+          <button class="w3-bar-item w3-button">1977-2017</button>
+        </div> <!-- end w3-dropdown-hover -->
+
+      </div> <!-- end w3-bar -->
       <p><i>please note searches are not encrypted and should not be considered private</i></p>
       <input type="submit" class="w3-button w3-light-gray w3-border w3-border-light-blue" value="Submit"></input>
       <p>searches will take some time - please be patient after pressing "submit"</p>
