@@ -26,25 +26,12 @@ C:\apache24\htdocs\
 #### Rscript executable location ####
 <br>**Windows:**
 ```
-C:\Program Files\R\R-3.5.1\bin\RScript.exe
+C:\Program Files\R\R-3.5.2\bin\RScript.exe
 ```
 <br>**Ubuntu:**
 ```
 /usr/lib/R/bin/Rscript
 ```
----
-
-##### super-simple-output-tester.php
-**line:** 23
-<br>**Windows:**
-```
-$output = `C:\"Program Files"\R\R-3.5.1\bin\RScript.exe ../r-scripts/simple-summary.R $year`;
-```
-<br>**Ubuntu:**
-```
-$output = `/usr/lib/R/bin/Rscript ../r-scripts/simple-summary.R $year`;
-```
-
 ---
 
 ##### simple-summary-with-sentimentPlot.R ####
