@@ -3,6 +3,7 @@
 
 1. **[Atom](https://atom.io/)** text editor
 <br> **[line-count](https://atom.io/packages/line-count)** Atom package
+<br> **[counter](https://atom.io/packages/counter)** Atom package for word counts of SOTUs
 <br> **[atom-beautify](https://atom.io/packages/atom-beautify)** Atom package
 <br> **[php-cs-fixer](https://atom.io/packages/php-cs-fixer)** Atom package
 <br> **[packagename](packURL)** Atom package
