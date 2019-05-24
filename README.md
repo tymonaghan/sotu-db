@@ -8,7 +8,7 @@ SOTU-db is a digital tool that allows users to search and perform sentiment anal
 Check out the [contribution guide](documentation/contribution-guide.md)
 
 ## Launch
-SOTU-db is due to be launched publicly on December 6, 2018 at www.sotu-db.com.
+SOTU-db is now available in a limited alpha release state at www.sotu-db.com.
 
 ## Info
 [Visit the SOTU-db dev blog](https://blog.sotu-db.com)
