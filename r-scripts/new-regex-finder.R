@@ -33,7 +33,7 @@ writeLines(toString(stringCountSum))
 sink()
 
 #### build dataFrames ####
-stringMatchResult = data_frame()
+stringMatchResult = tibble()
 stringMatchResult = tidySentences[which(tidySentences$word == str_match_all(tidySentences$word, regexUserQuerySentence)), ]
 
 #### write matching sentences to file

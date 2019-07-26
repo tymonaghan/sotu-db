@@ -3,14 +3,17 @@
 
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105747352-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105747352-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-105747352-3');
-</script>
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105747352-3');
+    </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="https://github.com/tymonaghan/sotu-db/raw/master/images/favicon.png">
@@ -38,11 +41,22 @@
       <p><i>This section of the site is still in progress.</i></p>
       <div class="w3-bar-block">
 
-        <h3><a href="#" class="w3-bar-item w3-button  w3-border-bottom w3-border-light-blue" onClick="faqSwitcher('aboutSentiment')">About Sentiment<i class="w3-right fa fa-chevron-down w3-margin"></i></a></h3>
+        <h3><a href="#" class="w3-bar-item w3-button  w3-border-bottom w3-border-light-blue" onClick="faqSwitcher('whatIsSOTUdb')">What is SOTU-db?<i class="w3-right fa fa-chevron-down w3-margin"></i></a></h3>
+        <div id="whatIsSOTUdb" class="w3-hide">
+          <p class="w3-bar-item w3-button">SOTU-db is a web-based tool to assess the "sentiment" of the texts of US Presidents' "State of the Union" addresses. You can learn more about sentiment analysis below. SOTU-db was created by Tyler Monaghan
+            as a capstone project for Loyola University Chicago's Master of Arts in Digital Humanities program.</p>
+        </div> <!-- end "aboutSentiment" div -->
+
+        <h3><a href="#" class="w3-bar-item w3-button  w3-border-bottom w3-border-light-blue" onClick="faqSwitcher('aboutSentiment')">About Sentiment Analysis<i class="w3-right fa fa-chevron-down w3-margin"></i></a></h3>
         <div id="aboutSentiment" class="w3-hide">
           <p class="w3-bar-item w3-button">SOTU-db is a tool to assess the "sentiment" of texts. This primarily means determining whether the text is "positive" or "negative." In most cases, this is accomplished with a basic positive/negative
             "sentiment lexicon," or word list. The list contains thousands of words marked as "positive" (such as "good," "happy," "peace") and negative (such as "sad," "angry," "kill"). SOTU-db searches the SOTU texts for these words, and simply
             counts the number of positive matches subtracted by the number of negative matches to determine "sentiment." In some cases the computations are more complicated than this, but this is the underlying method for all anaylses on SOTU-db.</p>
+          <p>From the "<a href="https://cran.r-project.org/web/packages/SentimentAnalysis/vignettes/SentimentAnalysis.html">SentimentAnalysis Vignette:</a>"
+            <blockquote cite="https://cran.r-project.org/web/packages/SentimentAnalysis/vignettes/SentimentAnalysis.html">Sentiment analysis is a research branch located at the heart of natural language processing (NLP), computational linguistics
+              and text mining. It refers to any measures by which subjective information is extracted from textual documents. In other words, it extracts the polarity of the expressed opinion in a range spanning from positive to negative. As a
+              result, one may also refer to sentiment analysis as opinion mining (Pang and Lee 2008).</blockquote>
+          </p>
         </div> <!-- end "aboutSentiment" div -->
 
         <h3><a href="#" class="w3-bar-item w3-button  w3-border-bottom w3-border-light-blue" onClick="faqSwitcher('aboutTexts')">About the Texts<i class="w3-right fa fa-chevron-down w3-margin"></i></a></h3>

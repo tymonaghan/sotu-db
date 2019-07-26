@@ -34,7 +34,7 @@
 //this block checks for windows or linux and sets $RScript path accordingly
   $RScript = '/usr/lib/R/bin/Rscript';
   if (strcasecmp(substr(PHP_OS_FAMILY, 0, 3), 'WIN') == 0) {
-      $RScript='C:\"Program Files"\R\R-3.5.1\bin\RScript.exe';
+      $RScript='C:\"Program Files"\R\R-3.5.2\bin\RScript.exe';
   }
 
 //gather and command-escape the user selection
