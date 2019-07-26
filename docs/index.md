@@ -1,3 +1,6 @@
+## Update as of January 2018
+SOTU-db's server access has been removed and we are working to get the site back online. Check Twitter @SOTU_db for the latest updates; we hope to have this resolved and access to SOTU-db restored soon.
+
 ![Wilson-1950](https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Photograph_of_President_Truman_delivering_his_State_of_the_Union_address_to_a_joint_session_of_Congress._-_NARA_-_200188.jpg/593px-Photograph_of_President_Truman_delivering_his_State_of_the_Union_address_to_a_joint_session_of_Congress._-_NARA_-_200188.jpg)
 
 ## Objective:
@@ -49,28 +52,6 @@ Create a user-friendly interactive database of text documents from the State of 
 - video or audio files of addresses
 
 - public interaction like wikis, comments, etc
-
-## Team:
-
-- **Tyler Monaghan:** Project lead, Processing visualizations
-
-- **Abdur Khan:** Project assistant, Python/R analysis
-
-- **Tina Figueroa:** Project assistant, social media integration
-
-## Schedule / Milestone Goals:
-
-**October 10, 2018:** Front-end interface options complete (HTML, React Native?)
-
-**October 20, 2018:** Have basic sentiment analysis script in RStudio saved and tested
-
-**November 1, 2018:** Front-end is live and publicly accessible
-
-**November 10, 2018:** R and Rstudio Server are installed on publicly-accessible Server
-
-**November 25, 2018:** Must-have features complete (minimum viable product). Public user can access the site, enter a search term, and see results
-
-**December 4, 2018:** Minimum Viable Product deadline - live demo at CTSDH
 
 ## Survey of existing resources:
 
